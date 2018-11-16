@@ -11,26 +11,25 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package main.java.colorpicker;
+package main.java.beesafe;
 
 import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
-import main.java.colorpicker.handlers.FallbackIntentHandler;
-import main.java.colorpicker.handlers.HelpIntentHandler;
-import main.java.colorpicker.handlers.LaunchRequestHandler;
-import main.java.colorpicker.handlers.SessionEndedRequestHandler;
-import main.java.colorpicker.handlers.WhatsMyColorIntentHandler;
-import main.java.colorpicker.handlers.CancelandStopIntentHandler;
-import main.java.colorpicker.handlers.MyColorIsIntentHandler;
 
-public class ColorPickerStreamHandler extends SkillStreamHandler {
+import main.java.beesafe.handlers.CancelandStopIntentHandler;
+import main.java.beesafe.handlers.FallbackIntentHandler;
+import main.java.beesafe.handlers.HelpIntentHandler;
+import main.java.beesafe.handlers.LaunchRequestHandler;
+import main.java.beesafe.handlers.MyColorIsIntentHandler;
+import main.java.beesafe.handlers.SessionEndedRequestHandler;
+import main.java.beesafe.handlers.WhatsMyColorIntentHandler;
+
+public class BeeSafeStreamHandler extends SkillStreamHandler {
 
     private static Skill getSkill() {
         return Skills.standard()
                 .addRequestHandlers(
-                        new WhatsMyColorIntentHandler(),
-                        new MyColorIsIntentHandler(),
                         new LaunchRequestHandler(),
                         new CancelandStopIntentHandler(),
                         new SessionEndedRequestHandler(),
@@ -41,7 +40,7 @@ public class ColorPickerStreamHandler extends SkillStreamHandler {
                 .build();
     }
 
-    public ColorPickerStreamHandler() {
+    public BeeSafeStreamHandler() {
         super(getSkill());
     }
 

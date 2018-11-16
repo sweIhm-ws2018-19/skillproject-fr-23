@@ -11,31 +11,30 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package main.java.colorpicker.handlers;
+package main.java.beesafe.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import com.amazon.ask.model.LaunchRequest;
 import com.amazon.ask.model.Response;
+import main.java.beesafe.SpeechStrings;
 
 import java.util.Optional;
 
-import static com.amazon.ask.request.Predicates.intentName;
+import static com.amazon.ask.request.Predicates.requestType;
 
-public class HelpIntentHandler implements RequestHandler {
+public class LaunchRequestHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.HelpIntent"));
+        return input.matches(requestType(LaunchRequest.class));
     }
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Du kannst mir Deine Lieblingsfarbe sagen. Sage zum Beispiel, meine Lieblingsfarbe ist rot.";
-        String repromptText = "Bitte sage mir Deine Lieblingsfarbe.";
         return input.getResponseBuilder()
-                .withSimpleCard("ColorSession", speechText)
-                .withSpeech(speechText)
-                .withReprompt(repromptText)
-                .withShouldEndSession(false)
+                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
+                .withSpeech(SpeechStrings.welcomeMessage)
+                .withReprompt(SpeechStrings.welcomeMessage_Reprompt)
                 .build();
     }
 }
