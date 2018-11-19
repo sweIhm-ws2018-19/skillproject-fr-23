@@ -7,4 +7,7 @@ public class SpeechStrings {
 	public static final String stopMessage = "Ich hoffe ich konnte dir helfen. Bis zum nächsten mal!";
 	
 	public static final String BeeSafeName = "AskGrandma - BeeSafe";
+	
+	public static final String helpMessage = "Sag mir, welche Verletzung du hast."; 
+	public static final String helpMessage_Reprompt = "Du kannst mir sagen, welche Verletzung du hast.";
 }

@@ -16,6 +16,7 @@ package main.java.beesafe.handlers;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
+import main.java.beesafe.SpeechStrings;
 
 import java.util.Optional;
 
@@ -29,12 +30,10 @@ public class HelpIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Du kannst mir Deine Lieblingsfarbe sagen. Sage zum Beispiel, meine Lieblingsfarbe ist rot.";
-        String repromptText = "Bitte sage mir Deine Lieblingsfarbe.";
         return input.getResponseBuilder()
-                .withSimpleCard("ColorSession", speechText)
-                .withSpeech(speechText)
-                .withReprompt(repromptText)
+                .withSimpleCard("ColorSession", SpeechStrings.helpMessage)
+                .withSpeech(SpeechStrings.helpMessage)
+                .withReprompt(SpeechStrings.helpMessage_Reprompt)
                 .withShouldEndSession(false)
                 .build();
     }

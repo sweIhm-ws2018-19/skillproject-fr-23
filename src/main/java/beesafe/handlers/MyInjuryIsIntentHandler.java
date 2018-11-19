@@ -27,13 +27,14 @@ import java.util.Map;
 import java.util.Optional;
 
 import static com.amazon.ask.request.Predicates.intentName;
-import static main.java.beesafe.handlers.WhatsMyColorIntentHandler.COLOR_KEY;
-import static main.java.beesafe.handlers.WhatsMyColorIntentHandler.COLOR_SLOT;
 
-public class MyColorIsIntentHandler implements RequestHandler {
+public class MyInjuryIsIntentHandler implements RequestHandler {
+	public static final String INJURY_SLOT = "Injury";
+	public static final String INJURY_KEY = "INJURY";
+	
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("MyColorIsIntent"));
+        return input.matches(intentName("MyInjuryIsIntent"));
     }
 
     @Override
@@ -43,29 +44,35 @@ public class MyColorIsIntentHandler implements RequestHandler {
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
 
-        // Get the color slot from the list of slots.
-        Slot favoriteColorSlot = slots.get(COLOR_SLOT);
+        // Get the injury slot from the list of slots.
+        Slot injurySlot = slots.get(INJURY_SLOT);
 
         String speechText, repromptText;
         boolean isAskResponse = false;
 
         // Check for favorite color and create output to user.
-        if (favoriteColorSlot != null) {
+        if (injurySlot != null) {
             // Store the user's favorite color in the Session and create response.
-            String favoriteColor = favoriteColorSlot.getValue();
-            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(COLOR_KEY, favoriteColor));
+            String injury = injurySlot.getValue();
+            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(INJURY_KEY, injury));
 
-            speechText =
-                    String.format("Deine Lieblingsfarbe ist %s. Du kannst mich jetzt nach Deiner Lieblingsfarbe fragen. "
-                            + "Frage einfach: was ist meine Lieblingsfarbe?", favoriteColor);
-            repromptText =
-                    "Frage nach meiner Lieblingsfarbe.";
+            if (injury.equals("stich")) {
+        		speechText = "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?";
+        		repromptText = "Hast du den Stachel rausgezogen? <break time=\\\"0.1s\\\"/> Hast du schon mal allergisch auf Stiche reagiert?";
+            }
+        	else if (injury.equals("sonnenbrand")) { 
+        		speechText = "Ohje, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?";
+        		repromptText = "Siehst du Blasen an deinem Sonnenbrand?";
+        	}
+        	else {
+        		speechText = "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Nähe: ";
+        		repromptText = String.format("Bei %s kann ich dir leider nicht helfen. Geh doch zur nächsten Notaufnahme. ", injury);
+        	}
 
         } else {
-            // Render an error since we don't know what the users favorite color is.
-            speechText = "Ich kenne Deine Lieblingsfarbe nicht. Bitte versuche es noch einmal.";
-            repromptText =
-                    "Ich weiss nicht welches Deine Lieblingsfarbe ist. Sag mir Deine Lieblingsfarbe. Sage zum Beispiel: ich mag blau.";
+            // Render an error since we don't know what the users injury is.
+            speechText = "Ich habe dich leider nicht verstanden. Kannst du mir deine Verletzung nochmal sagen?";
+            repromptText = "Ich weiss nicht was Deine Verletzung ist. Sag mir Deine Verletzung nochmal.";
             isAskResponse = true;
         }
 

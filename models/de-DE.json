@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "lieblingsfarbe",
+      "invocationName": "bee safe",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -16,26 +16,23 @@
           "samples": []
         },
         {
-          "name": "MyColorIsIntent",
+          "name": "MyInjuryIsIntent",
           "slots": [
             {
-              "name": "Color",
-              "type": "LIST_OF_COLORS"
+              "name": "Injury",
+              "type": "LIST_OF_INJURIES"
             }
           ],
           "samples": [
-            " Meine Lieblingsfarbe ist {Color}",
-            " Ich mag {Color}"
+            " Ich habe einen {Injury}",
+            " Meine Verletzung ist ein {Injury}",
+            " {Injury}"
           ]
         },
         {
           "name": "WhatsMyColorIntent",
           "slots": [],
-          "samples": [
-            "was ist meine Lieblingsfarbe",
-            "welche Farbe mag ich am liebsten",
-            "sag mir meine Lieblingsfarbe"
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.PauseIntent",
@@ -48,46 +45,16 @@
       ],
       "types": [
         {
-          "name": "LIST_OF_COLORS",
+          "name": "LIST_OF_INJURIES",
           "values": [
             {
               "name": {
-                "value": "grün"
+                "value": "stich"
               }
             },
             {
               "name": {
-                "value": "blau"
-              }
-            },
-            {
-              "name": {
-                "value": "lila"
-              }
-            },
-            {
-              "name": {
-                "value": "rot"
-              }
-            },
-            {
-              "name": {
-                "value": "orange"
-              }
-            },
-            {
-              "name": {
-                "value": "rosa"
-              }
-            },
-            {
-              "name": {
-                "value": "türkis"
-              }
-            },
-            {
-              "name": {
-                "value": "gelb"
+                "value": "sonnenbrand"
               }
             }
           ]

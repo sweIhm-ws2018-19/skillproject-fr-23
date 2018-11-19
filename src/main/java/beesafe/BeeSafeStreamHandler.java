@@ -21,15 +21,15 @@ import main.java.beesafe.handlers.CancelandStopIntentHandler;
 import main.java.beesafe.handlers.FallbackIntentHandler;
 import main.java.beesafe.handlers.HelpIntentHandler;
 import main.java.beesafe.handlers.LaunchRequestHandler;
-import main.java.beesafe.handlers.MyColorIsIntentHandler;
+import main.java.beesafe.handlers.MyInjuryIsIntentHandler;
 import main.java.beesafe.handlers.SessionEndedRequestHandler;
-import main.java.beesafe.handlers.WhatsMyColorIntentHandler;
 
 public class BeeSafeStreamHandler extends SkillStreamHandler {
 
     private static Skill getSkill() {
         return Skills.standard()
                 .addRequestHandlers(
+                		new MyInjuryIsIntentHandler(),
                         new LaunchRequestHandler(),
                         new CancelandStopIntentHandler(),
                         new SessionEndedRequestHandler(),
