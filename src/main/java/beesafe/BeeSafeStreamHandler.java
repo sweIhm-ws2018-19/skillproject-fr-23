@@ -19,6 +19,7 @@ import com.amazon.ask.Skills;
 
 import main.java.beesafe.handlers.CancelandStopIntentHandler;
 import main.java.beesafe.handlers.FallbackIntentHandler;
+import main.java.beesafe.handlers.GoodByeIntentHandler;
 import main.java.beesafe.handlers.HelpIntentHandler;
 import main.java.beesafe.handlers.LaunchRequestHandler;
 import main.java.beesafe.handlers.MyInjuryIsIntentHandler;
@@ -34,7 +35,8 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
                         new CancelandStopIntentHandler(),
                         new SessionEndedRequestHandler(),
                         new HelpIntentHandler(),
-                        new FallbackIntentHandler())
+                        new FallbackIntentHandler(),
+                		new GoodByeIntentHandler())
                 // Add your skill id below
                 //.withSkillId("")
                 .build();

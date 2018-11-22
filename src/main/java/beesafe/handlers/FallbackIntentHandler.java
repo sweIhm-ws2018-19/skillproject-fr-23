@@ -4,6 +4,8 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 
+import main.java.beesafe.SpeechStrings;
+
 import java.util.Optional;
 
 import static com.amazon.ask.request.Predicates.intentName;
@@ -23,7 +25,7 @@ public class FallbackIntentHandler implements RequestHandler {
         String speechText = "Tut mir leid, das weiss ich nicht. Sage einfach Hilfe.";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("ColorSession", speechText)
+                .withSimpleCard(SpeechStrings.BeeSafeName, speechText)
                 .withReprompt(speechText)
                 .build();
     }

@@ -11,4 +11,7 @@ public class SpeechStrings {
 	
 	public static final String helpMessage = "Sag mir, welche Verletzung du hast."; 
 	public static final String helpMessage_Reprompt = "Du kannst mir sagen, welche Verletzung du hast.";
+	
+	public static final String goodByeMessage = "Ich hoffe dir geht es bald besser! " + ""
+			+ "Lass es heute noch ein bisschen ruhiger angehen. Schoenen Tag dir noch.";
 }

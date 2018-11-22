@@ -31,7 +31,7 @@ public class HelpIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
         return input.getResponseBuilder()
-                .withSimpleCard("ColorSession", SpeechStrings.helpMessage)
+                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.helpMessage)
                 .withSpeech(SpeechStrings.helpMessage)
                 .withReprompt(SpeechStrings.helpMessage_Reprompt)
                 .withShouldEndSession(false)
