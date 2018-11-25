@@ -1,12 +1,21 @@
-
 language: java
 jdk:
- - oraclejdk8
-
+- oraclejdk8
 install:
-  - mvn -N io.takari:maven:wrapper
-  - ./mvnw install
-
-
-script:
-  mvn org.apache.maven.plugins:maven-assembly-plugin:2.6:assembly -DdescriptorId=jar-with-dependencies package
+- mvn -N io.takari:maven:wrapper
+- "./mvnw install"
+script: mvn org.apache.maven.plugins:maven-assembly-plugin:2.6:assembly -DdescriptorId=jar-with-dependencies
+  package
+deploy:
+  provider: codedeploy
+  access_key_id: ASIAUPXDNLOZJZKGDTWX
+  secret_access_key:
+    secure: sae79CZJq7JXkw6+qPjnf0nCUMtrVnuGVhNvrbTkt3Dv+/KNPMhMuCaQqQuuoGgnFRfHwSNv91f+ljPWVsDQXx6HY30DZqoKswQTR0YKWMhDH0c6iQC5qaVNvANW04+4VI49yI6gYUjhfQ27i7+c67KNFmmHksYeU6+hrbXXau+UdO8ltDZ/g5YITkEJP6yNtBPZP4Hk2B6xyKzMqMOnhfT0W4qwkjrvK5E8nfigMKXaxvdOykyPCmVCuByso3lrTi9KGG8edjicdFLoKAzPzfGk9VAkECzYpAEBQhBfQ/NdSFOt8L5MMQRfdJB7fo9vOMjC92Zm6JlItQAZJiu/ocPjzUVy6Ryowjk2zkDzWd6ALzGbH7f/a/TperxZl1xlwb+BNY9thW3mUYdV7qbiCvx9fq21eXtIbY1SmXoNoChab8j4gNfP8AeeRRVlaDVnAzmlC3vE1ia1qYj/zDcwY10fSPOCrzM6qG92Sl2WqpFV56awfQHoj/NzYv/YEVuZYgqGnSIdotcOce/I05CAfTCFuwArO9Ck0EGAxC6SNt2RzGk0ZmSX3FUu9WCxF4M1zlBu5nBwqUTKAfNa5kFYQkN1D9O+Ez+LGPwV2z8Zpm4WZvrE1hQhmYI5JHjsY43dCnUVIxhko6Obe3GWXn3jWuTUYPF67BFpkm268ng6YJU=
+  bucket: S3 Bucket
+  key: latest/skillproject-fr-23
+  bundle_type: java
+  application: skillproject-fr-23
+  deployment_group: MyDeploymentGroup
+  on:
+    repo: sweIhm-ws2018-19/skillproject-fr-23
+    branch: sprint1
