@@ -61,12 +61,12 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         		repromptText = "Hast du den Stachel rausgezogen? <break time=\\\"0.1s\\\"/> Hast du schon mal allergisch auf Stiche reagiert?";
             }
         	else if (injury.equals("sonnenbrand")) { 
-        		speechText = "Ohje, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?";
+        		speechText = "Ohje, <break time=\"0.1s\"/> bei starkem Sonnenbrand koennen Blasen entstehen. Siehst du welche?";
         		repromptText = "Siehst du Blasen an deinem Sonnenbrand?";
         	}
         	else {
-        		speechText = "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Nähe: ";
-        		repromptText = String.format("Bei %s kann ich dir leider nicht helfen. Geh doch zur nächsten Notaufnahme. ", injury);
+        		speechText = "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Naehe: ";
+        		repromptText = String.format("Bei %s kann ich dir leider nicht helfen. Geh doch zur naechsten Notaufnahme. ", injury);
         	}
 
         } else {
