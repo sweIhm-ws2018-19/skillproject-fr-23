@@ -1,68 +1,122 @@
 {
-	"interactionModel": {
-		"languageModel": {
-			"invocationName": "bee safe",
-			"intents": [
-				{
-					"name": "AMAZON.CancelIntent",
-					"samples": []
-				},
-				{
-					"name": "AMAZON.HelpIntent",
-					"samples": []
-				},
-				{
-					"name": "AMAZON.StopIntent",
-					"samples": []
-				},
-				{
-					"name": "GoodByeIntent",
-					"samples": [
-						"auf wiedersehen",
-						"Danke fuer den ratschlag, du kannst dich jetz abschalten.",
-						"Danke für die Behandlung."
-					]
-				},
-				{
-					"name": "MyInjuryIsIntent",
-					"slots": [
-						{
-							"name": "Injury",
-							"type": "LIST_OF_INJURIES"
-						}
-					],
-					"samples": [
-						" Ich habe einen {Injury}",
-						" Meine Verletzung ist ein {Injury}",
-						" {Injury}"
-					]
-				},
-				{
-					"name": "AMAZON.PauseIntent",
-					"samples": []
-				},
-				{
-					"name": "AMAZON.ResumeIntent",
-					"samples": []
-				}
-			],
-			"types": [
-				{
-					"name": "LIST_OF_INJURIES",
-					"values": [
-						{
-							"name": {
-								"value": "stich"
-							}
-						},
-						{
-							"name": {
-								"value": "sonnenbrand"
-							}
-						}
-					]
-				}
-			]
-		}
-	}
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "bee safe",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GoodByeIntent",
+                    "slots": [],
+                    "samples": [
+                        "auf wiedersehen",
+                        "Danke für den ratschlag"
+                    ]
+                },
+                {
+                    "name": "MyInjuryIsIntent",
+                    "slots": [
+                        {
+                            "name": "Injury",
+                            "type": "LIST_OF_INJURIES"
+                        }
+                    ],
+                    "samples": [
+                        " Ich habe einen {Injury}",
+                        " Meine Verletzung ist ein {Injury}",
+                        " {Injury}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "TreatmentIntent",
+                    "slots": [
+                        {
+                            "name": "Treatment",
+                            "type": "LIST_OF_TREATMENTS"
+                        }
+                    ],
+                    "samples": [
+                        "Ich habe eine {Treatment}.",
+                        "{Treatment}"
+                    ]
+                }                
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_INJURIES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "stich"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sonnenbrand"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_TREATMENTS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "nein",
+                                "synonyms": [
+                                    "keines",
+                                    "keines davon",
+                                    "habe ich nicht"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "backpulver"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "venestil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zitrone",
+                                "synonyms": [
+                                    "zitronen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zwiebel",
+                                "synonyms": [
+                                    "zwiebeln"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }

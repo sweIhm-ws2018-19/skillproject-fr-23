@@ -17,19 +17,14 @@ import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
 
-import main.java.beesafe.handlers.CancelandStopIntentHandler;
-import main.java.beesafe.handlers.FallbackIntentHandler;
-import main.java.beesafe.handlers.GoodByeIntentHandler;
-import main.java.beesafe.handlers.HelpIntentHandler;
-import main.java.beesafe.handlers.LaunchRequestHandler;
-import main.java.beesafe.handlers.MyInjuryIsIntentHandler;
-import main.java.beesafe.handlers.SessionEndedRequestHandler;
+import main.java.beesafe.handlers.*;
 
 public class BeeSafeStreamHandler extends SkillStreamHandler {
 
     private static Skill getSkill() {
         return Skills.standard()
                 .addRequestHandlers(
+                		new TreatmentIntentHandler(),
                 		new MyInjuryIsIntentHandler(),
                         new LaunchRequestHandler(),
                         new CancelandStopIntentHandler(),
