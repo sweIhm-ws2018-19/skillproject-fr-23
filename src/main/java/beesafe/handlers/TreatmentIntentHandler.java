@@ -49,7 +49,7 @@ public class TreatmentIntentHandler implements RequestHandler{
         	}
         } else {
         	isAskResponse = true;
-        	response = "Leider konnte ich dich nicht verstehen auf meine alten Tage. Kannst du bitte noch einmal sagen, welches Heilmittel du zu Hause hast?";
+        	response = "Leider konnte ich dich nicht verstehen auf meine  alten Tage. Kannst du bitte noch einmal sagen, welches Heilmittel du zu Hause hast?";
         }
         ResponseBuilder responseBuilder = input.getResponseBuilder();
         responseBuilder
