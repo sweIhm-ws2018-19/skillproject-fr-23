@@ -57,7 +57,7 @@
                         "Ich habe eine {Treatment}.",
                         "{Treatment}"
                     ]
-                }                
+                }
             ],
             "types": [
                 {
@@ -113,6 +113,24 @@
                                     "zwiebeln"
                                 ]
                             }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "TreatmentIntent",
+                    "confirmationRequired": true,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Treatment",
+                            "type": "LIST_OF_TREATMENTS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
                         }
                     ]
                 }
