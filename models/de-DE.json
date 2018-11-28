@@ -34,6 +34,7 @@
                     "samples": [
                         " Ich habe einen {Injury}",
                         " Meine Verletzung ist ein {Injury}",
+                        " Ich wurde {Injury}
                     ]
                 },
                 {
@@ -56,6 +57,25 @@
                         "Ich habe eine {Treatment}.",
                         "{Treatment}"
                     ]
+                },
+                {
+                    "name": "RiskIntent",
+                    "slots": [
+                        {
+                            "name": "Risk",
+                            "type": "LIST_OF_RISKS"
+                        }
+                    ],
+                    "samples": [
+                        "Ich bin {Risk}.",
+                        "Ich wurde {Risk} gestochen.", 
+                        "Meine Verletzung ist {Risk}." 
+                        "Mein Stich ist {Risk}." 
+                        "Mein Sonnenbrand ist {Risk}."
+                        "Ich habe {Risk}.",
+                        "Ich habe {Risk} und {Risk}."
+                        "Mir ist {Risk}.
+                    ]
                 }
             ],
             "types": [
@@ -64,7 +84,8 @@
                     "values": [
                         {
                             "name": {
-                                "value": "stich"
+                                "value": "stich", 
+                                "synonyms": ["bienenstich", "wespenstich", "gestochen"]
                             }
                         },
                         {
@@ -111,6 +132,45 @@
                                 "synonyms": [
                                     "zwiebeln"
                                 ]
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "name": "LIST_OF_RISKS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "allergisch",
+                                "synonyms": ["eine allergie", "eine starke allergie"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gefährliche stelle", 
+                                "synonyms": ["an einer gefährlichen stelle", "an einer sehr gefährlichen stelle"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "schwellung", 
+                                "synonyms": ["geschwollen", "angeschwollen", "eine schwellung", "eine starke schwellung", "stark geschwollen"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "atemnot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kreislaufprobleme", 
+                                "synonyms": ["ein kreislaufproblem","schwindel","schwindelig"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fieber"
                             }
                         }
                     ]

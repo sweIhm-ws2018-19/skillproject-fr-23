@@ -30,7 +30,7 @@ public class LaunchRequestHandler implements RequestHandler {
     }
 
     @Override
-    public Optional<Response> handle(HandlerInput input) {
+    public Optional<Response> handle(HandlerInput input) { 
         return input.getResponseBuilder()
                 .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
                 .withSpeech(SpeechStrings.welcomeMessage)

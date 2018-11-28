@@ -33,6 +33,7 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class MyInjuryIsIntentHandler implements RequestHandler {
 	public static final String INJURY_SLOT = "Injury";
 	public static final String INJURY_KEY = "INJURY";
+	public static Injury injury; 
 	
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -47,14 +48,13 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        Injury injury = new Injury(slots.get(INJURY_SLOT).getValue());
+        injury = new Injury(slots.get(INJURY_SLOT).getValue());
 
         String speechText, repromptText;
         boolean isAskResponse = false;
 
-        // Check for favorite color and create output to user.
+        // Check for injury and create output to user.
         if (injury != null) {
-            // Store the user's favorite color in the Session and create response.
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(INJURY_KEY, injury));
 
             if (injury.equals("stich")) {
