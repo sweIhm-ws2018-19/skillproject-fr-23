@@ -68,4 +68,3 @@ public class TreatmentIntentHandler implements RequestHandler{
 	}
 
 }
-

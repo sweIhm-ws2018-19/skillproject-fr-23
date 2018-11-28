@@ -1,39 +1,38 @@
 package test.java.beesafe.model;
 
-/*
-import static org.junit.Assert.assertEquals;
+import java.util.ArrayList;
+
+import org.junit.Assert;
 import org.junit.Test;
 
+import main.java.beesafe.model.HouseholdRemedy;
 import main.java.beesafe.model.Injury;
+import main.java.beesafe.model.Risk;
 
-public class InjuryTest {
-	 @Test
-	 public void validateSettersAndGetters() throws Exception{
-		 	 
-		 	com.openjo... lassen sich bei mir nicht importieren 
-		 	
-	        PojoClass activityPojo = PojoClassFactory.getPojoClass(Injury.class);
+class InjuryTest {
 
-	        Validator validator = ValidatorBuilder.create()
-	                // Lets make sure that we have a getter and a setter for every field defined.
-	                .with(new SetterMustExistRule()).with(new GetterMustExistRule())
-
-	                // Lets also validate that they are behaving as expected
-	                .with(new SetterTester()).with(new GetterTester()).build();
-
-	        // Start the Test
-	        validator.validate(activityPojo);
-	        
-	    }
-	 
-	    @Test
-	    public void validateIsValid() throws Exception {
-	        Injury injury_null = new Injury(null);
-	        assertEquals("isNotValid_null", false, injury_null.isValid());
-	        Injury injury_empty = new Injury("");
-	        assertEquals("isNotValid_empty", false, injury_empty.isValid());
-	        Injury injury = new Injury("stich");
-	        assertEquals("isValid", true, injury.isValid());
+	@Test
+	void test() {
+		ArrayList<HouseholdRemedy> households = new ArrayList<>();
+		households.add(new HouseholdRemedy("Zitrone/Zwiebel", "Sehr gut! Halbiere die Zitrone oder "
+				+ "Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. "
+				+ "Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht."));
+		households.add(new HouseholdRemedy("Venestil", "Sehr gut! Trage etwas von der Salbe auf. "
+					+ "Sie wirkt entzündungshemmend und kühlt die Stelle. "
+					+ "Versuche trotzdem die Stelle weiterhin zu kühlen. "
+					+ "Vermeide es die Stelle zu kratzen."));
+		households.add(new HouseholdRemedy("Backpulver", "Super! Backpulver hilft auch gut - vermische es mit ein "
+				+ "bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es "
+				+ "auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der "
+				+ "Einstichstelle."));
+		ArrayList<Risk> risks = new ArrayList<>();	
+		risks.add(new Risk("Schwellung"));
+		risks.add(new Risk("Riskante Stelle"));
+		Injury bienenstich = new Injury("Stich");
+		bienenstich.setHouseholds(households);
+		bienenstich.setRisks(risks);
+		
+		Assert.assertEquals("Stich", bienenstich.getInjury());
 	}
+
 }
-*/
