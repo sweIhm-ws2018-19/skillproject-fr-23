@@ -20,7 +20,9 @@ import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Request;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
-import com.amazon.ask.response.ResponseBuilder;
+import com.amazon.ask.response.ResponseBuilder; 
+import main.java.beesafe.SpeechStrings;
+import main.java.beesafe.model.Injury;
 
 import java.util.Collections;
 import java.util.Map;
@@ -45,24 +47,23 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        Slot injurySlot = slots.get(INJURY_SLOT);
+        Injury injury = new Injury(slots.get(INJURY_SLOT).getValue());
 
         String speechText, repromptText;
         boolean isAskResponse = false;
 
         // Check for favorite color and create output to user.
-        if (injurySlot != null) {
+        if (injury != null) {
             // Store the user's favorite color in the Session and create response.
-            String injury = injurySlot.getValue();
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(INJURY_KEY, injury));
 
             if (injury.equals("stich")) {
-        		speechText = "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?";
-        		repromptText = "Hast du den Stachel rausgezogen? <break time=\\\"0.1s\\\"/> Hast du schon mal allergisch auf Stiche reagiert?";
+        		speechText = SpeechStrings.injuryIsStich_Message;
+        		repromptText = SpeechStrings.injuryIsStich_Message_Reprompt;
             }
         	else if (injury.equals("sonnenbrand")) { 
-        		speechText = "Ohje, <break time=\"0.1s\"/> bei starkem Sonnenbrand koennen Blasen entstehen. Siehst du welche?";
-        		repromptText = "Siehst du Blasen an deinem Sonnenbrand?";
+        		speechText = SpeechStrings.injuryIsSonnenbrand_Message;
+        		repromptText = SpeechStrings.injuryIsSonnenbrand_Message_Reprompt;
         	}
         	else {
         		speechText = "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Naehe: ";
