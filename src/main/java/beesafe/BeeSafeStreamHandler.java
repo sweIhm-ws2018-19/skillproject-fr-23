@@ -24,7 +24,7 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
     private static Skill getSkill() {
         return Skills.standard()
                 .addRequestHandlers(
-                		new TreatmentIntentHandler(),
+                		new RiskIntentHandler(),
                 		new MyInjuryIsIntentHandler(),
                         new LaunchRequestHandler(),
                         new CancelandStopIntentHandler(),

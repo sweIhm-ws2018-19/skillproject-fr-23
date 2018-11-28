@@ -34,7 +34,7 @@
                     "samples": [
                         " Ich habe einen {Injury}",
                         " Meine Verletzung ist ein {Injury}",
-                        " Ich wurde {Injury}
+                        " Ich wurde {Injury}"
                     ]
                 },
                 {
@@ -54,7 +54,7 @@
                         }
                     ],
                     "samples": [
-                        "Ich habe eine {Treatment}.",
+                        "Ich habe eine {Treatment}",
                         "{Treatment}"
                     ]
                 },
@@ -67,14 +67,14 @@
                         }
                     ],
                     "samples": [
-                        "Ich bin {Risk}.",
-                        "Ich wurde {Risk} gestochen.", 
-                        "Meine Verletzung ist {Risk}." 
-                        "Mein Stich ist {Risk}." 
-                        "Mein Sonnenbrand ist {Risk}."
-                        "Ich habe {Risk}.",
-                        "Ich habe {Risk} und {Risk}."
-                        "Mir ist {Risk}.
+                        "Ich bin {Risk}",
+                        "Ich wurde {Risk} gestochen", 
+                        "Meine Verletzung ist {Risk}", 
+                        "Mein Stich ist {Risk}", 
+                        "Mein Sonnenbrand ist {Risk}",
+                        "Ich habe {Risk}",
+                        "Ich habe {Risk} und {Risk}",
+                        "Mir ist {Risk}"
                     ]
                 }
             ],
@@ -172,24 +172,6 @@
                             "name": {
                                 "value": "fieber"
                             }
-                        }
-                    ]
-                }
-            ]
-        },
-        "dialog": {
-            "intents": [
-                {
-                    "name": "TreatmentIntent",
-                    "confirmationRequired": true,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Treatment",
-                            "type": "LIST_OF_TREATMENTS",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
                         }
                     ]
                 }
