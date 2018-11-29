@@ -11,22 +11,22 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package beesafe;
+package main.beesafe;
 
 import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
 
-import beesafe.handlers.ApplicationHouseholdRemedyIntentHandler;
-import beesafe.handlers.CancelandStopIntentHandler;
-import beesafe.handlers.FallbackIntentHandler;
-import beesafe.handlers.GoodByeIntentHandler;
-import beesafe.handlers.HelpIntentHandler;
-import beesafe.handlers.LaunchRequestHandler;
-import beesafe.handlers.MyInjuryIsIntentHandler;
-import beesafe.handlers.RiskIntentHandler;
-import beesafe.handlers.SessionEndedRequestHandler;
-import beesafe.handlers.TreatmentIntentHandler;
+import main.beesafe.handlers.ApplicationHouseholdRemedyIntentHandler;
+import main.beesafe.handlers.CancelandStopIntentHandler;
+import main.beesafe.handlers.FallbackIntentHandler;
+import main.beesafe.handlers.GoodByeIntentHandler;
+import main.beesafe.handlers.HelpIntentHandler;
+import main.beesafe.handlers.LaunchRequestHandler;
+import main.beesafe.handlers.MyInjuryIsIntentHandler;
+import main.beesafe.handlers.RiskIntentHandler;
+import main.beesafe.handlers.SessionEndedRequestHandler;
+import main.beesafe.handlers.TreatmentIntentHandler;
 
 
 public class BeeSafeStreamHandler extends SkillStreamHandler {

@@ -1,4 +1,4 @@
-package beesafe.handlers;
+package main.beesafe.handlers;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
@@ -13,7 +13,7 @@ import com.amazon.ask.model.Request;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 
-import beesafe.SpeechStrings;
+import main.beesafe.SpeechStrings;
 
 public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
 	public static final String HOUSEHOLDREMEDY_SLOT = "HouseholdRemedy";

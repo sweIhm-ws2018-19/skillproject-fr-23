@@ -1,4 +1,4 @@
-package beesafe.model;
+package main.beesafe.model;
 
 public class Emergency {
 	private static int emergencyCall = 112;

@@ -11,30 +11,29 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package beesafe.handlers;
+package main.beesafe.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
-import beesafe.SpeechStrings;
+
+import main.beesafe.SpeechStrings;
 
 import java.util.Optional;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
-public class HelpIntentHandler implements RequestHandler {
+public class CancelandStopIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.HelpIntent"));
+        return input.matches(intentName("AMAZON.StopIntent").or(intentName("AMAZON.CancelIntent")));
     }
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
         return input.getResponseBuilder()
-                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.helpMessage)
-                .withSpeech(SpeechStrings.helpMessage)
-                .withReprompt(SpeechStrings.helpMessage_Reprompt)
-                .withShouldEndSession(false)
+                .withSpeech(SpeechStrings.stopMessage)
+                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.stopMessage)
                 .build();
     }
 }

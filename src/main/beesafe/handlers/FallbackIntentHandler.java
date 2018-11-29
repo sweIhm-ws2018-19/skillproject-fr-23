@@ -1,10 +1,10 @@
-package beesafe.handlers;
+package main.beesafe.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 
-import beesafe.SpeechStrings;
+import main.beesafe.SpeechStrings;
 
 import java.util.Optional;
 

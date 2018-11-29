@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import beesafe.model.HouseholdRemedy;
-import beesafe.model.Injury;
-import beesafe.model.Risk;
+import main.beesafe.model.HouseholdRemedy;
+import main.beesafe.model.Injury;
+import main.beesafe.model.Risk;
 
 public class InjuryTest {
 

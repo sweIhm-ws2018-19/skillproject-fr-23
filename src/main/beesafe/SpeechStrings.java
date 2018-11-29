@@ -1,4 +1,4 @@
-package beesafe;
+package main.beesafe;
 
 public class SpeechStrings {
 	public static final String welcomeMessage = "Willkommen bei Ask Grandma! " 

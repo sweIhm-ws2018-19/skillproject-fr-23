@@ -11,29 +11,31 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package beesafe.handlers;
+package main.beesafe.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import com.amazon.ask.model.LaunchRequest;
 import com.amazon.ask.model.Response;
-import com.amazon.ask.model.SessionEndedRequest;
 
-import beesafe.SpeechStrings;
+import main.beesafe.SpeechStrings;
 
 import java.util.Optional;
 
 import static com.amazon.ask.request.Predicates.requestType;
 
-public class SessionEndedRequestHandler implements RequestHandler {
+public class LaunchRequestHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(requestType(SessionEndedRequest.class));
+        return input.matches(requestType(LaunchRequest.class));
     }
 
     @Override
-    public Optional<Response> handle(HandlerInput input) {
-        // any cleanup logic goes here
+    public Optional<Response> handle(HandlerInput input) { 
         return input.getResponseBuilder()
-        		.build();
+                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
+                .withSpeech(SpeechStrings.welcomeMessage)
+                .withReprompt(SpeechStrings.welcomeMessage_Reprompt)
+                .build();
     }
 }

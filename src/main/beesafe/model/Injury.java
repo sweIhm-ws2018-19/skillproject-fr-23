@@ -1,4 +1,4 @@
-package beesafe.model;
+package main.beesafe.model;
 
 import java.util.ArrayList;
 
