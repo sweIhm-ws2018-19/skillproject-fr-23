@@ -1,4 +1,4 @@
-package beesafe.handlers;
+package main.java.beesafe.handlers;
 
 import static com.amazon.ask.request.Predicates.intentName;
 

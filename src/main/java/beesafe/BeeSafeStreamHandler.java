@@ -11,13 +11,13 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package main.java.beesafe;
+package beesafe;
 
+import beesafe.handlers.*;
 import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
 
-import main.java.beesafe.handlers.*;
 
 public class BeeSafeStreamHandler extends SkillStreamHandler {
 

@@ -11,14 +11,14 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package main.java.beesafe.handlers;
+package beesafe.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.SessionEndedRequest;
 
-import main.java.beesafe.SpeechStrings;
+import beesafe.SpeechStrings;
 
 import java.util.Optional;
 

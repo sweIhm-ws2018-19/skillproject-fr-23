@@ -11,7 +11,7 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package beesafe.handlers;
+package main.java.beesafe.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
@@ -22,8 +22,8 @@ import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 import com.amazon.ask.response.ResponseBuilder;
 
-import beesafe.SpeechStrings;
-import beesafe.model.Injury;
+import main.java.beesafe.SpeechStrings;
+import main.java.beesafe.model.Injury;
 
 import java.util.Map;
 import java.util.Optional;
