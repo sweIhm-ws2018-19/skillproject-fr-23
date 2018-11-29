@@ -32,7 +32,8 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
                         new SessionEndedRequestHandler(),
                         new HelpIntentHandler(),
                         new FallbackIntentHandler(),
-                		new GoodByeIntentHandler())
+                		new GoodByeIntentHandler(),
+                		new RiskIntentHandler())
                 // Add your skill id below
                 //.withSkillId("")
                 .build();
