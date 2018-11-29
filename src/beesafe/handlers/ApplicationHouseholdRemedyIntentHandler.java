@@ -14,7 +14,6 @@ import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 
 import beesafe.SpeechStrings;
-import beesafe.model.InjuryStatus;
 
 public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
 	public static final String HOUSEHOLDREMEDY_SLOT = "HouseholdRemedy";
@@ -32,7 +31,7 @@ public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
         String householdRemedy = slots.get(HOUSEHOLDREMEDY_KEY).getValue();        
-		String injury = InjuryStatus.injury.getInjury();
+		String injury = MyInjuryIsIntentHandler.injury.getInjury();
 		String response;
 		//TODO unterscheidung der Hausmittel einbauen!
 		
