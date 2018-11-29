@@ -30,43 +30,21 @@ public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
-        String householdRemedy = slots.get(HOUSEHOLDREMEDY_SLOT).getValue().toLowerCase(); 
+        String householdRemedy = slots.get(HOUSEHOLDREMEDY_SLOT).getValue(); 
         
-		String injury = MyInjuryIsIntentHandler.injury.getInjury().toLowerCase();
-		String response = SpeechStrings.anwendungKeineVerletzung;
+		String injury = MyInjuryIsIntentHandler.injury.getInjury();
+		String response;
+		//TODO unterscheidung der Hausmittel einbauen!
 		
-		if(!injury.isEmpty()) {
-			
+		if(householdRemedy != null && !injury.isEmpty()) {
 			if(injury.equals("stich")) {
-				switch (householdRemedy) {
-				case "zitrone": response = SpeechStrings.anwendungZitrone;
-					break;
-				case "zwiebel": response = SpeechStrings.anwendungZwiebel;
-					break;
-				case "backpulver": response = SpeechStrings.anwendungBackpulver;
-					break;
-				case "venestil": response = SpeechStrings.anwendungVenestil;
-					break;
-				case "nein": response = SpeechStrings.anwendungAlternativeStich;
-					break;
-				default: response = SpeechStrings.anwendungFalscheAngabe;
-				}				
+				response = SpeechStrings.anwendungZitrone;
 			} else {
-				switch (householdRemedy) {
-				case "quark": response = SpeechStrings.anwendungQuark;
-					break;
-				case "schwarzer tee": response = SpeechStrings.anwendungSchwarzerTee;
-					break;
-				case "aloevera": response = SpeechStrings.anwendungAloevera;
-					break;
-				case "gurke": response = SpeechStrings.anwendungGurke;
-					break;
-				case "nein": response = SpeechStrings.anwendungAlternativeSonnenbrand;
-					break;
-				default: response = SpeechStrings.anwendungFalscheAngabe;
-				}
+				response = SpeechStrings.anwendungDusche;
 			}
-		} 
+		} else {
+			response = SpeechStrings.anwendungKeineVerletzung;
+		}
 		
 		return input.getResponseBuilder().
 				withSimpleCard(SpeechStrings.BeeSafeName, response)
