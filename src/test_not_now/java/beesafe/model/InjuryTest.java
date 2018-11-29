@@ -1,19 +1,16 @@
-package test.java;
-
-import static org.junit.Assert.assertEquals;
+package beesafe.model;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
 
-import beesafe.model.HouseholdRemedy;
-import beesafe.model.Injury;
-import beesafe.model.Risk;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class InjuryTest {
+class InjuryTest {
 
 	@Test
-	public void test() {
+	void test() {
 		ArrayList<HouseholdRemedy> households = new ArrayList<>();
 		households.add(new HouseholdRemedy("Zitrone/Zwiebel", "Sehr gut! Halbiere die Zitrone oder "
 				+ "Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. "

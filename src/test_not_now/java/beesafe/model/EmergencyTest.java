@@ -1,15 +1,13 @@
-package test.java;
-
-import static org.junit.Assert.assertEquals;
+package beesafe.model;
 
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import beesafe.model.Emergency;
-
-public class EmergencyTest {
+class EmergencyTest {
 
 	@Test
-	public void test() {
+	void test() {
 		Emergency notaufnahme1 = new Emergency("Klinikum rechts der Isar <<break time=\\\"0.4s\\\"/>, "
 				+ "Ismaninger Strasse 22 <break time=\\\"0.4s\\\"/>, 81675 München");
 		Emergency notaufnahme2 = new Emergency("Notfallzentrum - Klinikum Schwabing <break time=\\\"0.4s\\\"/>,"

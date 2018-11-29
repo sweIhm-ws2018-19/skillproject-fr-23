@@ -1,15 +1,14 @@
-package test.java;
-
-import static org.junit.Assert.assertEquals;
+package beesafe.model;
 
 import org.junit.Test;
 
-import beesafe.model.Risk;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class RiskTest {
+class RiskTest {
 
 	@Test
-	public void test() {
+	void test() {
 		Risk schwellung = new Risk("Schwellung");
 		assertEquals(false, schwellung.getIsOccured());
 		assertEquals("Schwellung", schwellung.getName());

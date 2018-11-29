@@ -24,14 +24,6 @@ public class SpeechStrings {
 	public static final String risikoBeiSonnenbrand_Message = "Dann solltest du auf jeden Fall zu einem Arzt gehen. <break time =\"0.2s\"/> Hier sind die Notaufnahmen:"; 
 	public static final String risikoBeiSonnenbrand_Message_Reprompt = "Geh lieber zu einem Arzt oder in die nächste Notaufnahme.";
 	
-	public static final String hausmittelStich = "Als Hausmittel fuer einen Bienenstich kannst du eine Zitrone, Zwiebel oder Venestil benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
-	public static final String hausmittelSonnenbrand = "Als Hausmittel fur einen Sonnenbrand kannst du keine Ahnung was benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
-	public static final String hausmittelKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit Hausmitteln weiterhelfen.";
-	
-	public static final String anwendungZitrone = "Wende eine Zitrone an.";
-	public static final String anwendungDusche = "Wende eine Dusche an.";
-	public static final String anwendungKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen.";
-	
 	public static final String goodByeMessage = "Ich hoffe dir geht es bald besser! " + ""
 			+ "Lass es heute noch ein bisschen ruhiger angehen. Schoenen Tag dir noch.";
 }

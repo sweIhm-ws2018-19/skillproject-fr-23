@@ -13,16 +13,15 @@
 
 package beesafe.handlers;
 
-import static com.amazon.ask.request.Predicates.requestType;
-
-import java.util.Optional;
-
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.LaunchRequest;
 import com.amazon.ask.model.Response;
-
 import beesafe.SpeechStrings;
+
+import java.util.Optional;
+
+import static com.amazon.ask.request.Predicates.requestType;
 
 public class LaunchRequestHandler implements RequestHandler {
     @Override

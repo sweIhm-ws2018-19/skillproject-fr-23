@@ -1,15 +1,14 @@
-package test.java;
-
-import static org.junit.Assert.assertEquals;
+package beesafe.model;
 
 import org.junit.Test;
 
-import beesafe.model.HouseholdRemedy;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class HouseholdRemedyTest {
+class HouseholdRemedyTest {
 
 	@Test
-	public void test() {
+	void test() {
 		HouseholdRemedy gurke = new HouseholdRemedy("Gurke", 
 				"Super, schneide die Gurke in Scheiben und lege diese "
 				+ "dann auf den Sonnenbrand.");

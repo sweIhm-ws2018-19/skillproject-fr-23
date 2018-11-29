@@ -13,11 +13,6 @@
 
 package beesafe.handlers;
 
-import static com.amazon.ask.request.Predicates.intentName;
-
-import java.util.Map;
-import java.util.Optional;
-
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Intent;
@@ -29,7 +24,11 @@ import com.amazon.ask.response.ResponseBuilder;
 
 import beesafe.SpeechStrings;
 import beesafe.model.Injury;
-import beesafe.model.InjuryStatus;
+
+import java.util.Map;
+import java.util.Optional;
+
+import static com.amazon.ask.request.Predicates.intentName;
 
 public class RiskIntentHandler implements RequestHandler {
 	public static final String RISK_SLOT = "Risk";
@@ -48,7 +47,7 @@ public class RiskIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
         String risk = slots.get(RISK_SLOT).getValue();
     	
-    	Injury injury = InjuryStatus.injury; 
+    	Injury injury = MyInjuryIsIntentHandler.injury; 
     	String speechText, repromptText;
     	boolean isAskResponse = false;
     	
