@@ -3,7 +3,7 @@ package beesafe;
 public class SpeechStrings {
 	public static final String welcomeMessage = "Willkommen bei Ask Grandma! " 
 												+ "Hallo! Wie kann ich dir helfen?";
-	public static final String welcomeMessage_Reprompt = "Hey ist da jemand <break time =\"1s\"/>? Deine Grossmutter hat gerade Zeit für dich.";
+	public static final String welcomeMessage_Reprompt = "Hey ist da jemand <break time =\\\"1s\\\"/>? Deine Grossmutter hat gerade Zeit für dich.";
 	
 	public static final String stopMessage = "Ich hoffe ich konnte dir helfen. Bis zum naechsten mal!";
 	
@@ -14,8 +14,8 @@ public class SpeechStrings {
 	
 	public static final String injuryIsStich_Message = "Oh nein! <break time=\"0.1s\"/> Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! <break time=\"0.4s\"/> Hast du schonmal allergisch auf Stiche reagiert oder wurdest du an einer gefährlichen Stelle gestochen? Ist der Stich angeschwollen oder hast du Atemnot? <break time=\"0.3s\"/> Wenn nicht, kannst du mich nach Heilmitteln fragen.";
 	public static final String injuryIsStich_Message_Reprompt = "Hast du den Stachel rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert oder wurdest du an einer gefährlichen Stelle gestochen? Ist der Stich angeschwollen oder hast du Atemnot? <break time=\"0.3s\"/> Wenn nicht, kannst du mich nach Heilmitteln fragen.";
-	public static final String injuryIsSonnenbrand_Message = "Oh, <break time=\"0.1s\"/> Siehst du Blasen an deinem Sonnenbrand oder hast du Kreislaufprobleme oder Fieber? <break time=\"0.3s\"/> Wenn nicht, kannst du mich nach Heilmitteln fragen.";
-	public static final String injuryIsSonnenbrand_Message_Reprompt = "Siehst du Blasen oder hast du Kreislaufprobleme oder Fieber? <break time=\"0.3s\"/> Wenn nicht, kannst du mich nach Heilmitteln fragen.";
+	public static final String injuryIsSonnenbrand_Message = "Oh, <break time=\"0.1s\"/> Siehst du Blasen an deinem Sonnenbrand oder hast du Kreislaufprobleme oder Fieber? <break time=\\\"0.3s\\\"/> Wenn nicht, kannst du mich nach Heilmitteln fragen.";
+	public static final String injuryIsSonnenbrand_Message_Reprompt = "Siehst du Blasen oder hast du Kreislaufprobleme oder Fieber? <break time=\\\"0.3s\\\"/> Wenn nicht, kannst du mich nach Heilmitteln fragen.";
 	
 	public static final String risikoBeiStich_Message = "Das hört sich nicht gut an! <break time =\"0.2s\"/>Es wäre besser wenn du in die nächste Notaufnahme gehst! Soll ich dir einen Krankenwagen rufen?";
 	public static final String risikoBeiStich_Message_Reprompt = "Geh lieber in die nächste Notaufnahme.";
@@ -23,6 +23,14 @@ public class SpeechStrings {
 	public static final String risikoEinesSonnenstichs_Message_Reprompt = "Bei einem Sonnenstich solltest du lieber zur nächsten Notaufnahme gehen.";
 	public static final String risikoBeiSonnenbrand_Message = "Dann solltest du auf jeden Fall zu einem Arzt gehen. <break time =\"0.2s\"/> Hier sind die Notaufnahmen:"; 
 	public static final String risikoBeiSonnenbrand_Message_Reprompt = "Geh lieber zu einem Arzt oder in die nächste Notaufnahme.";
+	
+	public static final String hausmittelStich = "Als Hausmittel fuer einen Bienenstich kannst du eine Zitrone, Zwiebel oder Venestil benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
+	public static final String hausmittelSonnenbrand = "Als Hausmittel fur einen Sonnenbrand kannst du keine Ahnung was benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
+	public static final String hausmittelKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit Hausmitteln weiterhelfen.";
+	
+	public static final String anwendungZitrone = "Wende eine Zitrone an.";
+	public static final String anwendungDusche = "Wende eine Dusche an.";
+	public static final String anwendungKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen.";
 	
 	public static final String goodByeMessage = "Ich hoffe dir geht es bald besser! " + ""
 			+ "Lass es heute noch ein bisschen ruhiger angehen. Schoenen Tag dir noch.";

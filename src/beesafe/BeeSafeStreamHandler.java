@@ -13,11 +13,20 @@
 
 package beesafe;
 
-import beesafe.handlers.*;
-
 import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
+
+import beesafe.handlers.ApplicationHouseholdRemedyIntentHandler;
+import beesafe.handlers.CancelandStopIntentHandler;
+import beesafe.handlers.FallbackIntentHandler;
+import beesafe.handlers.GoodByeIntentHandler;
+import beesafe.handlers.HelpIntentHandler;
+import beesafe.handlers.LaunchRequestHandler;
+import beesafe.handlers.MyInjuryIsIntentHandler;
+import beesafe.handlers.RiskIntentHandler;
+import beesafe.handlers.SessionEndedRequestHandler;
+import beesafe.handlers.TreatmentIntentHandler;
 
 
 public class BeeSafeStreamHandler extends SkillStreamHandler {
@@ -33,7 +42,8 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
                         new HelpIntentHandler(),
                         new FallbackIntentHandler(),
                 		new GoodByeIntentHandler(),
-                		new RiskIntentHandler())
+                		new RiskIntentHandler(),
+                		new ApplicationHouseholdRemedyIntentHandler())
                 // Add your skill id below
                 //.withSkillId("")
                 .build();
