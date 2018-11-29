@@ -14,6 +14,8 @@
 package beesafe;
 
 import beesafe.handlers.*;
+import main.java.beesafe.handlers.MyInjuryIsIntentHandler;
+
 import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;

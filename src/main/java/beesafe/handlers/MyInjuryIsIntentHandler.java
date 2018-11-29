@@ -49,6 +49,8 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
 
         // Get the injury slot from the list of slots.
         injury = new Injury(slots.get(INJURY_SLOT).getValue());
+        
+        System.out.println(injury.getInjury());
 
         String speechText, repromptText;
         boolean isAskResponse = false;
@@ -57,11 +59,11 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         if (injury != null) {
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(INJURY_KEY, injury));
 
-            if (injury.equals("stich")) {
+            if (injury.getInjury().equals("stich")) {
         		speechText = SpeechStrings.injuryIsStich_Message;
         		repromptText = SpeechStrings.injuryIsStich_Message_Reprompt;
             }
-        	else if (injury.equals("sonnenbrand")) { 
+        	else if (injury.getInjury().equals("sonnenbrand")) { 
         		speechText = SpeechStrings.injuryIsSonnenbrand_Message;
         		repromptText = SpeechStrings.injuryIsSonnenbrand_Message_Reprompt;
         	}
