@@ -30,20 +30,41 @@ public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
-        String householdRemedy = slots.get(HOUSEHOLDREMEDY_SLOT).getValue(); 
+        String householdRemedy = slots.get(HOUSEHOLDREMEDY_SLOT).getValue().toLowerCase(); 
         
 		String injury = MyInjuryIsIntentHandler.injury.getInjury();
-		String response;
-		//TODO unterscheidung der Hausmittel einbauen!
+		String response  = SpeechStrings.anwendungKeineVerletzung;;
 		
-		if(householdRemedy != null && !injury.isEmpty()) {
+		if(!injury.isEmpty()) {
 			if(injury.equals("stich")) {
-				response = SpeechStrings.anwendungZitrone;
+				switch (householdRemedy) {
+				case "zitrone": response = SpeechStrings.anwendungZitrone;
+					break;
+				case "zwiebel": response = SpeechStrings.anwendungZwiebel;
+					break;
+				case "backpulver": response = SpeechStrings.anwendungBackpulver;
+					break;
+				case "venestil": response = SpeechStrings.anwendungVenestil;
+					break;
+				case "nein": response = SpeechStrings.anwendungAlternativeStich;
+					break;
+				default: response = SpeechStrings.anwendungFalscheAngabe;
+				}
 			} else {
-				response = SpeechStrings.anwendungDusche;
+				switch (householdRemedy) {
+				case "quark": response = SpeechStrings.anwendungQuark;
+					break;
+				case "schwarzer tee": response = SpeechStrings.anwendungSchwarzerTee;
+					break;
+				case "aloevera": response = SpeechStrings.anwendungAloevera;
+					break;
+				case "gurke": response = SpeechStrings.anwendungGurke;
+					break;
+				case "nein": response = SpeechStrings.anwendungAlternativeSonnenbrand;
+					break;
+				default: response = SpeechStrings.anwendungFalscheAngabe;
+				}
 			}
-		} else {
-			response = SpeechStrings.anwendungKeineVerletzung;
 		}
 		
 		return input.getResponseBuilder().
