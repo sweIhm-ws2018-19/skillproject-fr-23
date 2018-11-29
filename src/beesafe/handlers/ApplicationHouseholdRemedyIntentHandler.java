@@ -21,7 +21,7 @@ public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
 
 	@Override
 	public boolean canHandle(HandlerInput input) {
-		return input.matches(intentName("ApplicationHouseholdRemedy"));
+		return input.matches(intentName("ApplicationHouseholdRemedyIntent"));
 	}
 
 	@Override
@@ -30,7 +30,8 @@ public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
-        String householdRemedy = slots.get(HOUSEHOLDREMEDY_KEY).getValue();        
+        String householdRemedy = slots.get(HOUSEHOLDREMEDY_SLOT).getValue(); 
+        
 		String injury = MyInjuryIsIntentHandler.injury.getInjury();
 		String response;
 		//TODO unterscheidung der Hausmittel einbauen!

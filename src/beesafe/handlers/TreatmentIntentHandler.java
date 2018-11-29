@@ -12,12 +12,9 @@ import beesafe.SpeechStrings;
 
 public class TreatmentIntentHandler implements RequestHandler{
 	
-	public static final String injury_SLOT = "injury";
-	public static final String injury_KEY = "injury";
-
 	@Override
 	public boolean canHandle(HandlerInput input) {			
-		return input.matches(intentName("injuryIntent"));
+		return input.matches(intentName("TreatmentIntent"));
 	}
 
 	@Override
