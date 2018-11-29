@@ -20,7 +20,7 @@
                     "slots": [],
                     "samples": [
                         "auf wiedersehen",
-                        "Danke für den ratschlag"
+                        "Danke fuer den ratschlag"
                     ]
                 },
                 {
@@ -147,8 +147,8 @@
                         },
                         {
                             "name": {
-                                "value": "gefährliche stelle", 
-                                "synonyms": ["an einer gefährlichen stelle", "an einer sehr gefährlichen stelle"]
+                                "value": "gefaehrliche stelle", 
+                                "synonyms": ["an einer gefaehrlichen stelle", "an einer sehr gefaehrlichen stelle"]
                             }
                         },
                         {
