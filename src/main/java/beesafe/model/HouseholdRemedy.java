@@ -1,4 +1,4 @@
-package main.beesafe.model;
+package main.java.beesafe.model;
 
 public class HouseholdRemedy {
 	private String name;

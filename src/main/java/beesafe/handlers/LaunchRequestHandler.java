@@ -11,29 +11,31 @@
      the specific language governing permissions and limitations under the License.
 */
 
-package main.beesafe.handlers;
+package main.java.beesafe.handlers;
 
-import com.amazon.ask.dispatcher.request.handler.HandlerInput;
-import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.model.Response;
-
-import main.beesafe.SpeechStrings;
+import static com.amazon.ask.request.Predicates.requestType;
 
 import java.util.Optional;
 
-import static com.amazon.ask.request.Predicates.intentName;
+import com.amazon.ask.dispatcher.request.handler.HandlerInput;
+import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import com.amazon.ask.model.LaunchRequest;
+import com.amazon.ask.model.Response;
 
-public class CancelandStopIntentHandler implements RequestHandler {
+import main.java.beesafe.SpeechStrings;
+
+public class LaunchRequestHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.StopIntent").or(intentName("AMAZON.CancelIntent")));
+        return input.matches(requestType(LaunchRequest.class));
     }
 
     @Override
-    public Optional<Response> handle(HandlerInput input) {
+    public Optional<Response> handle(HandlerInput input) { 
         return input.getResponseBuilder()
-                .withSpeech(SpeechStrings.stopMessage)
-                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.stopMessage)
+                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
+                .withSpeech(SpeechStrings.welcomeMessage)
+                .withReprompt(SpeechStrings.welcomeMessage_Reprompt)
                 .build();
     }
 }

@@ -1,4 +1,4 @@
-package main.beesafe.handlers;
+package main.java.beesafe.handlers;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
@@ -8,7 +8,7 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 
-import main.beesafe.SpeechStrings;
+import main.java.beesafe.SpeechStrings;
 
 public class TreatmentIntentHandler implements RequestHandler{
 	

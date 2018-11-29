@@ -1,14 +1,14 @@
-package main.beesafe.handlers;
+package main.java.beesafe.handlers;
+
+import static com.amazon.ask.request.Predicates.intentName;
+
+import java.util.Optional;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 
-import main.beesafe.SpeechStrings;
-
-import java.util.Optional;
-
-import static com.amazon.ask.request.Predicates.intentName;
+import main.java.beesafe.SpeechStrings;
 
 public class GoodByeIntentHandler implements RequestHandler{
 	

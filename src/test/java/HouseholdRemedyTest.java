@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import main.beesafe.model.HouseholdRemedy;
+import main.java.beesafe.model.HouseholdRemedy;
 
 public class HouseholdRemedyTest {
 

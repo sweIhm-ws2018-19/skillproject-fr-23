@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import main.beesafe.model.Risk;
+import main.java.beesafe.model.Risk;
 
 public class RiskTest {
 
