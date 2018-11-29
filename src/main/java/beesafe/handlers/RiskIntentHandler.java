@@ -36,7 +36,7 @@ public class RiskIntentHandler implements RequestHandler {
 	
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.RiskIntent"));
+        return input.matches(intentName("RiskIntent"));
     }
 
     @Override
@@ -51,19 +51,24 @@ public class RiskIntentHandler implements RequestHandler {
     	String speechText, repromptText;
     	boolean isAskResponse = false;
     	
-    	if (injury.equals("stich")) { 
-    		speechText = SpeechStrings.risikoBeiStich_Message;
-    		repromptText = SpeechStrings.risikoBeiStich_Message_Reprompt;
-    	}
-    	else if (injury.equals("sonnenbrand")) { 
-    		if(risk.equals("fieber") || risk.equals("kreislaufprobleme")) { 
-    			speechText = SpeechStrings.risikoEinesSonnenstichs_Message;
-        		repromptText = SpeechStrings.risikoEinesSonnenstichs_Message_Reprompt;
-    		}
-    		else { 
-    			speechText = SpeechStrings.risikoBeiSonnenbrand_Message;
-        		repromptText = SpeechStrings.risikoBeiSonnenbrand_Message_Reprompt;
-    		}
+    	if (injury != null) {
+	    	if (injury.getInjury().equals("stich")) { 
+	    		speechText = SpeechStrings.risikoBeiStich_Message;
+	    		repromptText = SpeechStrings.risikoBeiStich_Message_Reprompt;
+	    	}
+	    	else if (injury.getInjury().equals("sonnenbrand")) { 
+	    		if(risk.equals("fieber") || risk.equals("kreislaufprobleme")) { 
+	    			speechText = SpeechStrings.risikoEinesSonnenstichs_Message;
+	        		repromptText = SpeechStrings.risikoEinesSonnenstichs_Message_Reprompt;
+	    		}
+	    		else { 
+	    			speechText = SpeechStrings.risikoBeiSonnenbrand_Message;
+	        		repromptText = SpeechStrings.risikoBeiSonnenbrand_Message_Reprompt;
+	    		}
+	    	} else {
+	    		speechText = "Bitte sag mir zuerst, was deine Verletzung ist"; 
+	    		repromptText = "Ich wei� leider nicht, was deine Verletzung ist.";
+	    	}
     	}
     	else { 
     		speechText = "Bitte sag mir zuerst, was deine Verletzung ist"; 
