@@ -13,6 +13,12 @@
 
 package beesafe.handlers;
 
+import static com.amazon.ask.request.Predicates.intentName;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.Optional;
+
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Intent;
@@ -20,20 +26,16 @@ import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Request;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
-import com.amazon.ask.response.ResponseBuilder; 
+import com.amazon.ask.response.ResponseBuilder;
+
 import beesafe.SpeechStrings;
 import beesafe.model.Injury;
-
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
-
-import static com.amazon.ask.request.Predicates.intentName;
+import beesafe.model.InjuryStatus;
 
 public class MyInjuryIsIntentHandler implements RequestHandler {
 	public static final String INJURY_SLOT = "Injury";
 	public static final String INJURY_KEY = "INJURY";
-	public static Injury injury; 
+	//public static Injury injury; 
 	
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -48,7 +50,10 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        injury = new Injury(slots.get(INJURY_SLOT).getValue());
+        InjuryStatus.injury = new Injury(slots.get(INJURY_SLOT).getValue());
+        String injury = InjuryStatus.injury.getInjury();
+        //TODO 
+        //injury = new Injury(slots.get(INJURY_SLOT).getValue());
 
         String speechText, repromptText;
         boolean isAskResponse = false;
@@ -79,7 +84,7 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
 
         ResponseBuilder responseBuilder = input.getResponseBuilder();
 
-        responseBuilder.withSimpleCard("ColorSession", speechText)
+        responseBuilder.withSimpleCard(SpeechStrings.BeeSafeName, speechText)
                 .withSpeech(speechText)
                 .withShouldEndSession(false);
 

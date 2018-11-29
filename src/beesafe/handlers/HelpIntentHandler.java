@@ -13,27 +13,29 @@
 
 package beesafe.handlers;
 
-import com.amazon.ask.dispatcher.request.handler.HandlerInput;
-import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.model.Response;
-import com.amazon.ask.model.SessionEndedRequest;
-
-import beesafe.SpeechStrings;
+import static com.amazon.ask.request.Predicates.intentName;
 
 import java.util.Optional;
 
-import static com.amazon.ask.request.Predicates.requestType;
+import com.amazon.ask.dispatcher.request.handler.HandlerInput;
+import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import com.amazon.ask.model.Response;
 
-public class SessionEndedRequestHandler implements RequestHandler {
+import beesafe.SpeechStrings;
+
+public class HelpIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(requestType(SessionEndedRequest.class));
+        return input.matches(intentName("AMAZON.HelpIntent"));
     }
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        // any cleanup logic goes here
         return input.getResponseBuilder()
-        		.build();
+                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.helpMessage)
+                .withSpeech(SpeechStrings.helpMessage)
+                .withReprompt(SpeechStrings.helpMessage_Reprompt)
+                .withShouldEndSession(false)
+                .build();
     }
 }
