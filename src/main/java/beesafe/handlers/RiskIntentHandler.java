@@ -51,11 +51,11 @@ public class RiskIntentHandler implements RequestHandler {
     	String speechText, repromptText;
     	boolean isAskResponse = false;
     	
-    	if (injury.equals("stich")) { 
+    	if (injury.getInjury().equals("stich")) { 
     		speechText = SpeechStrings.risikoBeiStich_Message;
     		repromptText = SpeechStrings.risikoBeiStich_Message_Reprompt;
     	}
-    	else if (injury.equals("sonnenbrand")) { 
+    	else if (injury.getInjury().equals("sonnenbrand")) { 
     		if(risk.equals("fieber") || risk.equals("kreislaufprobleme")) { 
     			speechText = SpeechStrings.risikoEinesSonnenstichs_Message;
         		repromptText = SpeechStrings.risikoEinesSonnenstichs_Message_Reprompt;
