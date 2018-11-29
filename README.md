@@ -15,3 +15,22 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 - Entlastung von Notaufnahmen
 - große Zielgruppe
 - falsche Diagnose (Lösung: Weiterleitung an Arzt)
+
+## Mögliche Kommunikation:
+
+<b>Nutzer:</b> "Alexa, öffne bee safe"
+
+<b>Alexa:</b> "Willkommen bei Ask Grandma! Hallo! Wie kann ich dir helfen?"
+
+<b>Nutzer:</b> "Ich habe einen Sonnenbrand"
+
+<b>Alexa:</b> "Oh, Siehst du Blasen an deinem Sonnenbrand oder hast du Kreislaufprobleme oder Fieber? Wenn nicht, kannst du mich nach Heilmitteln fragen.
+
+<b>Nutzer:</b> "Ich habe Fieber"
+
+<b>Alexa:</b> "Oh nein, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Hier sind die nächsten Notaufnahmen: ..."
+
+<b>Nutzer:</b> "stop"
+
+<b>Alexa:</b> "Ich hoffe ich konnte dir helfen. Bis zum naechsten mal!"
+
