@@ -24,25 +24,37 @@ public class SpeechStrings {
 	public static final String risikoBeiSonnenbrand_Message = "Dann solltest du auf jeden Fall zu einem Arzt gehen. <break time =\"0.2s\"/> Hier sind die Notaufnahmen:"; 
 	public static final String risikoBeiSonnenbrand_Message_Reprompt = "Geh lieber zu einem Arzt oder in die nächste Notaufnahme.";
 	
-	public static final String hausmittelStich = "Als Hausmittel fuer einen Bienenstich kannst du eine Zitrone, Zwiebel, Backpulver oder Venestil benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
-	public static final String hausmittelSonnenbrand = "Als Hausmittel fur einen Sonnenbrand kannst du Quark, schwarzen Tee, Aloe Vera oder eine Gurke benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
-	public static final String hausmittelKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit Hausmitteln weiterhelfen.";
+	public static final String hausmittelStich = "Schoen, dann lass mich mal in meinem schlauen Buechlein nachschlagen." +
+			" Als Hausmittel fuer einen Bienenstich kannst du eine Zitrone, Zwiebel, Backpulver oder Venestil benutzen." +
+			" Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
+	public static final String hausmittelSonnenbrand = "Schoen, dann lass mich mal in meinem schlauen Buechlein nachschlagen." +
+			" Als Hausmittel fuer einen Sonnenbrand kannst du Quark, schwarzen Tee, Aloe Vera oder eine Gurke benutzen." +
+			" Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest.";
+	public static final String hausmittelKeineVerletzung = "Leider hast du mir noch nicht gesagt, was dir fehlt." +
+			" Mach das bitte zuerst, dann kann ich dir mit Hausmitteln weiterhelfen.";
 	
-	public static final String anwendungBackpulver = "muss noch eingefuegt werden.";
-	public static final String anwendungVenestil = "Einfach ein bisschen venestil auf den Stich auftragen.";
-	public static final String anwendungZwiebel = "Schneide die Zwiebel in zwei Haelften und lege sie auf den Stich.";
-	public static final String anwendungZitrone = "Schneide die Zitrone in zwei Haelften und lege sie auf den Stich.";
-	public static final String anwendungAlternativeStich = "Das macht nichts. Lass etwas kaltes Wasser darueber laufen, dass hilft auch schon.";
+	public static final String anwendungBackpulver = "Super! Backpulver hilft auch gut. Vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf." +
+			" Sollte es dir gut tun kannst du es auch nochmal spaeter wiederholen. Vergiss nicht weiterhin die Wunde zu kuehlen und kratze nicht an der Einstichstelle.";
+	public static final String anwendungVenestil = "Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzuendungshemmen und kuehlt die Stelle." +
+			"Versuche trotzdem die Stelle weiterhin zu kuehlen. Vermeide es die Stelle zu kratzen";
+	public static final String anwendungZwiebel = "Sehr gut! Halbiere die Zwiebel und lege die Schnittstelle auf den Stich." +
+			" Das Gift wird dadurch dem Stich entzogen. Kuehle die Stelle trotzdem weiterhin und kratze die Stelle nicht.";
+	public static final String anwendungZitrone = "Sehr gut! Halbiere die Zwiebel und lege die Schnittstelle auf den Stich." +
+			" Das Gift wird dadurch dem Stich entzogen. Kuehle die Stelle trotzdem weiterhin und kratze die Stelle nicht.";
+	public static final String anwendungAlternativeStich = "Das ist auch nicht so schlimm. Kuehle den Stich einfach mit ein paar umwickelten Eiswuerfeln oder einem kalten Handtuch." +
+			" Pass aber auf, dass du nicht zu sehr kuehlst, sonst kommt es zu Irritationen an der Haut. Lager die Stelle etwas hoch und versuche dich zu schonen." +
+			" Wichtig ist auch, dass du nicht an der Stelle kratzt!";
 
-	public static final String anwendungQuark = "Streiche einfach ein bisschen Quark auf die verbrannten Stellen.";
-	public static final String anwendungSchwarzerTee = "muss noch eingefuegt werden.";
-	public static final String anwendungAloevera = "muss noch eingefuegt werden.";
-	public static final String anwendungGurke = "muss noch eingefuegt werden.";	
-	public static final String anwendungAlternativeSonnenbrand = "Das macht nichts. Eine kalte Dusche hilft dir sicher weiter.";
+	public static final String anwendungQuark = "Super, streich das Produkt einfach auf ein Baumwolltuch und lege es auf die verbrannte Stelle. Bevor es wieder warm wird, solltest du es aber wegnehmen.";
+	public static final String anwendungSchwarzerTee = "Sehr gut, bereite den Tee zu und lege die gebrauchten Teebeutel in den Kuehlschrank. Sobald sie kalt sind, kannst du sie auf deine verbrannte Haut legen.";
+	public static final String anwendungAloevera = "Sehr gut! Trage es einfach grosszuegig auf den Sonnenbrand auf.";
+	public static final String anwendungGurke = "Super, schneide die Gurke in Scheiben und lege diese dann auf den Sonnenbrand.";	
+	public static final String anwendungAlternativeSonnenbrand = "Schade, aber eine kalte Dusche wird deiner Haut auch guttun.";
 
-	public static final String anwendungKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das Bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen";
+	public static final String anwendungKeineVerletzung = "Leider hast du mir noch nicht gesagt, was fuer eine Verletzung du hast." +
+	" Mach das bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen";
 	public static final String anwendungFalscheAngabe = "Damit solltest du deine Verletzung nicht behandeln. Frag bitte nochmal nach den Hausmitteln fuer deine Verletzung an.";
 	
-	public static final String goodByeMessage = "Ich hoffe dir geht es bald besser! " + ""
+	public static final String goodByeMessage = "Ich hoffe dir geht es bald besser und du weist Oma ist immer fuer dich da. " + ""
 			+ "Lass es heute noch ein bisschen ruhiger angehen. Schoenen Tag dir noch.";
 }
