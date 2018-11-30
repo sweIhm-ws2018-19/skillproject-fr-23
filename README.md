@@ -16,7 +16,9 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 - große Zielgruppe
 - falsche Diagnose (Lösung: Weiterleitung an Arzt)
 
-## Mögliche Kommunikation:
+## Kommunikationsbeispiele:
+
+### Verletzung mit Risiko
 
 <b>Nutzer:</b> "Alexa, öffne bee safe"
 
@@ -33,4 +35,26 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 <b>Nutzer:</b> "stop"
 
 <b>Alexa:</b> "Ich hoffe ich konnte dir helfen. Bis zum naechsten mal!"
+
+### Verletzung die man mit Hausmitteln behandeln kann
+
+<b>Nutzer:</b> "Alexa, öffne bee safe"
+
+<b>Alexa:</b> "Willkommen bei Ask Grandma! Hallo! Wie kann ich dir helfen?"
+
+<b>Nutzer:</b> "Ich habe einen Stich"
+
+<b>Alexa:</b> "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert oder wurdest du an einer gefährlichen Stelle gestochen? Ist der Stich angeschwollen oder hast du Atemnot? Wenn nicht, kannst du mich nach Heilmitteln fragen."
+
+<b>Nutzer:</b> "Hausmittel"
+
+<b>Alexa:</b> "Als Hausmittel fuer einen Bienenstich kannst du eine Zitrone, Zwiebel, Backpulver oder Venestil benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest."
+
+<b>Nutzer:</b> "nein"
+
+<b>Alexa:</b> "Das macht nichts. Lass etwas kaltes Wasser darueber laufen, dass hilft auch schon."
+
+<b>Nutzer:</b> "stop"
+
+<b>Alexa:</b> "Ich hoffe ich konnte dir helfen. Bis zum naechsten Mal!"
 
