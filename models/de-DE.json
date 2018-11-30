@@ -1,98 +1,181 @@
 {
-  "interactionModel": {
-    "languageModel": {
-      "invocationName": "lieblingsfarbe",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "MyColorIsIntent",
-          "slots": [
-            {
-              "name": "Color",
-              "type": "LIST_OF_COLORS"
-            }
-          ],
-          "samples": [
-            " Meine Lieblingsfarbe ist {Color}",
-            " Ich mag {Color}"
-          ]
-        },
-        {
-          "name": "WhatsMyColorIntent",
-          "slots": [],
-          "samples": [
-            "was ist meine Lieblingsfarbe",
-            "welche Farbe mag ich am liebsten",
-            "sag mir meine Lieblingsfarbe"
-          ]
-        },
-        {
-          "name": "AMAZON.PauseIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.ResumeIntent",
-          "samples": []
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "bee safe",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GoodByeIntent",
+                    "slots": [],
+                    "samples": [
+                        "auf wiedersehen",
+                        "Danke fuer den ratschlag"
+                    ]
+                },
+                {
+                    "name": "MyInjuryIsIntent",
+                    "slots": [
+                        {
+                            "name": "Injury",
+                            "type": "LIST_OF_INJURIES"
+                        }
+                    ],
+                    "samples": [
+                        " Ich habe einen {Injury}",
+                        " Meine Verletzung ist ein {Injury}",
+                        " Ich wurde {Injury}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "TreatmentIntent",
+                    "slots": [
+                        {
+                            "name": "Treatment",
+                            "type": "LIST_OF_TREATMENTS"
+                        }
+                    ],
+                    "samples": [
+                        "Ich habe eine {Treatment}",
+                        "{Treatment}"
+                    ]
+                },
+                {
+                    "name": "RiskIntent",
+                    "slots": [
+                        {
+                            "name": "Risk",
+                            "type": "LIST_OF_RISKS"
+                        }
+                    ],
+                    "samples": [
+                        "Ich bin {Risk}",
+                        "Ich wurde {Risk} gestochen", 
+                        "Meine Verletzung ist {Risk}", 
+                        "Mein Stich ist {Risk}", 
+                        "Mein Sonnenbrand ist {Risk}",
+                        "Ich habe {Risk}",
+                        "Ich habe {Risk} und {Risk}",
+                        "Mir ist {Risk}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_INJURIES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "stich", 
+                                "synonyms": ["bienenstich", "wespenstich", "gestochen"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sonnenbrand"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_TREATMENTS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "nein",
+                                "synonyms": [
+                                    "keines",
+                                    "keines davon",
+                                    "habe ich nicht"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "backpulver"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "venestil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zitrone",
+                                "synonyms": [
+                                    "zitronen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zwiebel",
+                                "synonyms": [
+                                    "zwiebeln"
+                                ]
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "name": "LIST_OF_RISKS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "allergisch",
+                                "synonyms": ["eine allergie", "eine starke allergie"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gefaehrliche stelle", 
+                                "synonyms": ["an einer gefaehrlichen stelle", "an einer sehr gefaehrlichen stelle"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "schwellung", 
+                                "synonyms": ["geschwollen", "angeschwollen", "eine schwellung", "eine starke schwellung", "stark geschwollen"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "atemnot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kreislaufprobleme", 
+                                "synonyms": ["ein kreislaufproblem","schwindel","schwindelig"]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fieber"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "types": [
-        {
-          "name": "LIST_OF_COLORS",
-          "values": [
-            {
-              "name": {
-                "value": "grün"
-              }
-            },
-            {
-              "name": {
-                "value": "blau"
-              }
-            },
-            {
-              "name": {
-                "value": "lila"
-              }
-            },
-            {
-              "name": {
-                "value": "rot"
-              }
-            },
-            {
-              "name": {
-                "value": "orange"
-              }
-            },
-            {
-              "name": {
-                "value": "rosa"
-              }
-            },
-            {
-              "name": {
-                "value": "türkis"
-              }
-            },
-            {
-              "name": {
-                "value": "gelb"
-              }
-            }
-          ]
-        }
-      ]
     }
-  }
 }
