@@ -30,7 +30,8 @@ public class ApplicationHouseholdRemedyIntentHandler implements RequestHandler{
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
-        String householdRemedy = slots.get(HOUSEHOLDREMEDY_SLOT).getValue().toLowerCase(); 
+        Slot householdRemedySlot = slots.get(HOUSEHOLDREMEDY_SLOT);
+        String householdRemedy = householdRemedySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName();
         
 		String injury = MyInjuryIsIntentHandler.injury.getInjury();
 		String response  = SpeechStrings.anwendungKeineVerletzung;;

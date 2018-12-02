@@ -29,6 +29,7 @@ import com.amazon.ask.response.ResponseBuilder;
 
 import main.java.beesafe.SpeechStrings;
 import main.java.beesafe.model.Injury;
+import main.java.beesafe.model.Risk; 
 
 public class RiskIntentHandler implements RequestHandler {
 	public static final String RISK_SLOT = "Risk";
@@ -45,7 +46,8 @@ public class RiskIntentHandler implements RequestHandler {
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
-        String risk = slots.get(RISK_SLOT).getValue();
+        Slot riskSlot = slots.get(RISK_SLOT);
+        Risk risk = new Risk(riskSlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
     	
     	Injury injury = MyInjuryIsIntentHandler.injury; 
     	String speechText, repromptText;
@@ -57,7 +59,7 @@ public class RiskIntentHandler implements RequestHandler {
 	    		repromptText = SpeechStrings.risikoBeiStich_Message_Reprompt;
 	    	}
 	    	else if (injury.getInjury().equals("sonnenbrand")) { 
-	    		if(risk.equals("fieber") || risk.equals("kreislaufprobleme")) { 
+	    		if(risk.getName().equals("fieber") || risk.getName().equals("kreislaufprobleme")) { 
 	    			speechText = SpeechStrings.risikoEinesSonnenstichs_Message;
 	        		repromptText = SpeechStrings.risikoEinesSonnenstichs_Message_Reprompt;
 	    		}

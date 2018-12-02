@@ -164,6 +164,12 @@
                         },
                         {
                             "name": {
+                                "value": "blasen", 
+                                "synonyms": ["eine blase"]
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "kreislaufprobleme", 
                                 "synonyms": ["ein kreislaufproblem","schwindel","schwindelig"]
                             }

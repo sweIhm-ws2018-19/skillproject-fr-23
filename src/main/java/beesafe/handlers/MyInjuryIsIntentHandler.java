@@ -49,7 +49,8 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        injury = new Injury(slots.get(INJURY_SLOT).getValue());
+        Slot injurySlot = slots.get(INJURY_SLOT);
+        injury = new Injury(injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
         
         System.out.println(injury.getInjury());
 
