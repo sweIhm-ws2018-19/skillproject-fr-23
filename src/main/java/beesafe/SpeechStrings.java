@@ -43,6 +43,7 @@ public class SpeechStrings {
 	public static final String anwendungKeineVerletzung = "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das Bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen";
 	public static final String anwendungFalscheAngabe = "Damit solltest du deine Verletzung nicht behandeln. Frag bitte nochmal nach den Hausmitteln fuer deine Verletzung an.";
 	
-	public static final String goodByeMessage = "Ich hoffe dir geht es bald besser! " + ""
-			+ "Lass es heute noch ein bisschen ruhiger angehen. Schoenen Tag dir noch.";
+	public static final String goodByeMessage_Stich = "Und du weißt, Oma ist immer für dich da. Es kann passieren, dass sich der Stich infiziert dann solltest du nochmal zum Onkel Doktor schauen. Aber das passiert meistens nicht - du weißt doch, Oma ist immer übervorsichtig.";
+	public static final String goodByeMessage_Sonnenbrand = "Vergiss nicht viel zu trinken! Und du weißt, Oma ist immer für dich da. Falls doch noch Blasen entstehen, solltest du auf jeden Fall zu einem Arzt gehen. Das passiert aber selten - du weißt doch, Oma ist immer übervorsichtig."; 
+	public static final String goodByeMessage_Alternative = "Ich hoffe, ich konnte dir weiterhelfen."; 
 }

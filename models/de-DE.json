@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "bee safe",
+            "invocationName": "wespenstich",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -19,6 +19,10 @@
                     "name": "GoodByeIntent",
                     "slots": [],
                     "samples": [
+                        "danke fuer die hilfe",
+                        "okay",
+                        "alles klar",
+                        "danke",
                         "auf wiedersehen",
                         "Danke fuer den ratschlag"
                     ]
@@ -68,13 +72,29 @@
                     ],
                     "samples": [
                         "Ich bin {Risk}",
-                        "Ich wurde {Risk} gestochen", 
-                        "Meine Verletzung ist {Risk}", 
-                        "Mein Stich ist {Risk}", 
+                        "Ich wurde {Risk} gestochen",
+                        "Meine Verletzung ist {Risk}",
+                        "Mein Stich ist {Risk}",
                         "Mein Sonnenbrand ist {Risk}",
                         "Ich habe {Risk}",
                         "Ich habe {Risk} und {Risk}",
                         "Mir ist {Risk}"
+                    ]
+                },
+                {
+                    "name": "YesIntent",
+                    "slots": [],
+                    "samples": [
+                        "hab ich ",
+                        "ja"
+                    ]
+                },
+                {
+                    "name": "NoIntent",
+                    "slots": [],
+                    "samples": [
+                        "hab ich nicht",
+                        "nein"
                     ]
                 }
             ],
@@ -84,8 +104,12 @@
                     "values": [
                         {
                             "name": {
-                                "value": "stich", 
-                                "synonyms": ["bienenstich", "wespenstich", "gestochen"]
+                                "value": "stich",
+                                "synonyms": [
+                                    "bienenstich",
+                                    "wespenstich",
+                                    "gestochen"
+                                ]
                             }
                         },
                         {
@@ -135,26 +159,38 @@
                             }
                         }
                     ]
-                }, 
+                },
                 {
                     "name": "LIST_OF_RISKS",
                     "values": [
                         {
                             "name": {
                                 "value": "allergisch",
-                                "synonyms": ["eine allergie", "eine starke allergie"]
+                                "synonyms": [
+                                    "eine allergie",
+                                    "eine starke allergie"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "gefaehrliche stelle", 
-                                "synonyms": ["an einer gefaehrlichen stelle", "an einer sehr gefaehrlichen stelle"]
+                                "value": "gefaehrliche stelle",
+                                "synonyms": [
+                                    "an einer gefaehrlichen stelle",
+                                    "an einer sehr gefaehrlichen stelle"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "schwellung", 
-                                "synonyms": ["geschwollen", "angeschwollen", "eine schwellung", "eine starke schwellung", "stark geschwollen"]
+                                "value": "schwellung",
+                                "synonyms": [
+                                    "geschwollen",
+                                    "angeschwollen",
+                                    "eine schwellung",
+                                    "eine starke schwellung",
+                                    "stark geschwollen"
+                                ]
                             }
                         },
                         {
@@ -164,14 +200,20 @@
                         },
                         {
                             "name": {
-                                "value": "blasen", 
-                                "synonyms": ["eine blase"]
+                                "value": "blasen",
+                                "synonyms": [
+                                    "eine blase"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "kreislaufprobleme", 
-                                "synonyms": ["ein kreislaufproblem","schwindel","schwindelig"]
+                                "value": "kreislaufprobleme",
+                                "synonyms": [
+                                    "ein kreislaufproblem",
+                                    "schwindel",
+                                    "schwindelig"
+                                ]
                             }
                         },
                         {
