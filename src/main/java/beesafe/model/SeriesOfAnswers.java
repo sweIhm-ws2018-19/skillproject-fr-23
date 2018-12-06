@@ -39,7 +39,7 @@ public class SeriesOfAnswers {
 			answersToYes.add("Super, schneide die Gurke in Scheiben und lege diese dann auf den Sonnenbrand.");
 			
 			answersToNo.add("Gut, hast du Kreislaufprobleme oder Fieber?"); 
-			answersToNo.add("Sehr schön, dann lass mich mal in meinem schlauen Büchlein nachsehen. <break time =\"1s\"/> Hast du Aloe Vera oder Feuchtigkeitscreme zur Hand?"); 
+			answersToNo.add("Sehr schön, dann lass mich mal in meinem schlauen Büchlein nachsehen. <audio src='soundbank://soundlibrary/human/amzn_sfx_walking_on_grass_02'/> Hast du Aloe Vera oder Feuchtigkeitscreme zur Hand?"); 
 			answersToNo.add("Nicht schlimm, hast du Quark oder Joghurt daheim?"); 
 			answersToNo.add("Okay, kein Problem! Hast du Camillentee oder Schwarzen Tee zur Hand?"); 
 			answersToNo.add("Das ist nicht schlimm, hast du eine Gurke daheim?"); 
