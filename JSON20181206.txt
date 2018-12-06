@@ -1,0 +1,216 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "bee safe two",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GoodByeIntent",
+                    "slots": [],
+                    "samples": [
+                        "danke fuer die hilfe",
+                        "okay",
+                        "alles klar",
+                        "danke",
+                        "auf wiedersehen",
+                        "Danke fuer den ratschlag"
+                    ]
+                },
+                {
+                    "name": "MyInjuryIsIntent",
+                    "slots": [
+                        {
+                            "name": "Injury",
+                            "type": "LIST_OF_INJURIES"
+                        }
+                    ],
+                    "samples": [
+                        " Ich habe einen {Injury}",
+                        " Meine Verletzung ist ein {Injury}",
+                        " Ich wurde {Injury}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RiskIntent",
+                    "slots": [
+                        {
+                            "name": "Risk",
+                            "type": "LIST_OF_RISKS"
+                        }
+                    ],
+                    "samples": [
+                        "Ich bin {Risk}",
+                        "Ich wurde {Risk} gestochen",
+                        "Meine Verletzung ist {Risk}",
+                        "Mein Stich ist {Risk}",
+                        "Mein Sonnenbrand ist {Risk}",
+                        "Ich habe {Risk}",
+                        "Ich habe {Risk} und {Risk}",
+                        "Mir ist {Risk}"
+                    ]
+                },
+                {
+                    "name": "YesIntent",
+                    "slots": [
+                        {
+                            "name": "Yes",
+                            "type": "LIST_OF_YES"
+                        }
+                    ],
+                    "samples": [
+                        "ich habe {Yes}",
+                        "hab ich ",
+                        "ja",
+                        "{Yes}"
+                    ]
+                },
+                {
+                    "name": "NoIntent",
+                    "slots": [],
+                    "samples": [
+                        "hab ich nicht",
+                        "nein"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_INJURIES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "stich",
+                                "synonyms": [
+                                    "bienenstich",
+                                    "wespenstich",
+                                    "gestochen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sonnenbrand"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_RISKS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "allergisch",
+                                "synonyms": [
+                                    "eine allergie",
+                                    "eine starke allergie"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gefaehrliche stelle",
+                                "synonyms": [
+                                    "an einer gefaehrlichen stelle",
+                                    "an einer sehr gefaehrlichen stelle"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "schwellung",
+                                "synonyms": [
+                                    "geschwollen",
+                                    "angeschwollen",
+                                    "eine schwellung",
+                                    "eine starke schwellung",
+                                    "stark geschwollen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "atemnot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blasen",
+                                "synonyms": [
+                                    "eine blase"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kreislaufprobleme",
+                                "synonyms": [
+                                    "ein kreislaufproblem",
+                                    "schwindel",
+                                    "schwindelig"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fieber"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_YES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ja",
+                                "synonyms": [
+                                    "backpulver",
+                                    "venestil",
+                                    "gurke",
+                                    "schwarzen tee",
+                                    "schwarzer tee",
+                                    "kamillentee",
+                                    "camillentee",
+                                    "tee",
+                                    "joghurt",
+                                    "quark",
+                                    "feuchtigkeitscreme",
+                                    "hab ich",
+                                    "zitronen",
+                                    "zitrone",
+                                    "zwiebeln",
+                                    "zwiebel",
+                                    "aloe vera",
+                                    "aloevera"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

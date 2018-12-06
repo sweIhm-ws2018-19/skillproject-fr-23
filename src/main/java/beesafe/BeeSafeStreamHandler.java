@@ -26,7 +26,6 @@ import main.java.beesafe.handlers.LaunchRequestHandler;
 import main.java.beesafe.handlers.MyInjuryIsIntentHandler;
 import main.java.beesafe.handlers.RiskIntentHandler;
 import main.java.beesafe.handlers.SessionEndedRequestHandler;
-import main.java.beesafe.handlers.TreatmentIntentHandler;
 import main.java.beesafe.handlers.YesIntentHandler;
 import main.java.beesafe.handlers.NoIntentHandler;
 
@@ -36,7 +35,6 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
     private static Skill getSkill() {
         return Skills.standard()
                 .addRequestHandlers(
-                		new TreatmentIntentHandler(),
                 		new MyInjuryIsIntentHandler(),
                         new LaunchRequestHandler(),
                         new CancelandStopIntentHandler(),

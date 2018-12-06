@@ -25,8 +25,8 @@ public class SeriesOfAnswers {
 			
 			answersToNo.add("Wurdest du an einer gefährlichen Stelle gestochen?"); 
 			answersToNo.add("OK das hört sich nicht so schlimm an! Ist es denn stark geschwollen oder hast du Atemnot?"); 
-			answersToNo.add("Perfekt! Dann ist es nicht schlimm bleib ruhig und befloge Omas Rat. Hast du Venestil zu Hause?"); 
-			answersToNo.add("Nicht schlimm, lass mich mal in der Küche schauen, was passen könnte. <break time =\"2s\"/> Ah! Ich habe was gefunden! Hast du vielleicht eine Zitrone oder eine Zwiebel zu Hause?"); 
+			answersToNo.add("Perfekt! Dann ist es nicht schlimm bleib ruhig und befolge Omas Rat. Hast du Venestil zu Hause?"); 
+			answersToNo.add("Nicht schlimm, lass mich mal in der Küche schauen, was passen könnte. <break time =\"1s\"/> Ah! Ich habe was gefunden! Hast du vielleicht eine Zitrone oder eine Zwiebel zu Hause?"); 
 			answersToNo.add("Ok nicht schlimm! Oma weiß doch immer einen Ausweg. Hast du Backpulver da?"); 
 			answersToNo.add("Auch nicht so schlimm. Kühle den Stich einfach mit ein paar umwickelten Eiswürfeln oder einem kalten Handtuch. Pass aber auf, dass du nicht zu sehr kühlst, sonst kommt es zu Irritationen an der Haut. Lager die Stelle etwas hoch und versuche dich zu schonen. Wichtig ist auch, dass du nicht an der Stelle kratzt!");
 		}
@@ -39,7 +39,7 @@ public class SeriesOfAnswers {
 			answersToYes.add("Super, schneide die Gurke in Scheiben und lege diese dann auf den Sonnenbrand.");
 			
 			answersToNo.add("Gut, hast du Kreislaufprobleme oder Fieber?"); 
-			answersToNo.add("Sehr schön, dann lass mich mal in meinem schlauen Büchlein nachsehen. <break time =\"2s\"/> Hast du Aloe Vera oder Feuchtigkeitscreme zur Hand?"); 
+			answersToNo.add("Sehr schön, dann lass mich mal in meinem schlauen Büchlein nachsehen. <break time =\"1s\"/> Hast du Aloe Vera oder Feuchtigkeitscreme zur Hand?"); 
 			answersToNo.add("Nicht schlimm, hast du Quark oder Joghurt daheim?"); 
 			answersToNo.add("Okay, kein Problem! Hast du Camillentee oder Schwarzen Tee zur Hand?"); 
 			answersToNo.add("Das ist nicht schlimm, hast du eine Gurke daheim?"); 
