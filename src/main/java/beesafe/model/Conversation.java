@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class Conversation {
 	private static int index = -1; 
 	private static Injury injury = null; 
+	private static Injury lastInjury = new Injury("sonnenbrand");
+	private static boolean nowConversation = lastInjury.getInjury().equals(null);
 	
 	private static final String[] answersToYes_stich = new String[] {
 			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
@@ -40,7 +42,15 @@ public class Conversation {
 			"Schade, aber eine kalte Dusche wird deiner Haut auch guttun."
     };
 	
+	private static final String[] answersToYes_lastInjury = new String[] {
+			"Super, wie kann ich dir sonst helfen?",
+			"Hier sind die Notaufnahmen:"
+	};
 	
+	private static final String[] answersToNo_lastInjury = new String[] {
+			"Ohje, dann solltest du vielleicht zu einem Arzt gehen. Möchtest du wissen, wo die nächste Notaufnahme ist?",
+			"Alles klar, wie kann ich dir sonst helfen?"
+	};
 	
 	public static void setInjury(String injuryString) { 
 		injury = new Injury(injuryString); 
@@ -81,7 +91,16 @@ public class Conversation {
 	}
 	
 	public static String getNextAnswer(boolean answerIsYes) { 
-		index += 1;
+		if (nowConversation) {
+			index += 1;
+			return nextAnswer(answerIsYes);
+		} else {
+			index += 1;
+			return nextLastInjuryAnswer(answerIsYes);
+		}			
+	}
+	
+	private static String nextAnswer(boolean answerIsYes) {
 		if (index < 6) { 
 			if (injury != null) { 
 				if (injury.getInjury().equals("stich")) { 
@@ -113,6 +132,23 @@ public class Conversation {
 		}
 	}
 	
+	public static String nextLastInjuryAnswer(boolean answerIsYes) {
+		String answer;
+		if (answerIsYes) { 
+			nowConversation = true;
+			answer = answersToYes_lastInjury[index];
+			index = -1;
+		}
+		else { 
+			answer = answersToNo_lastInjury[index];
+			if (index == 1) {
+				nowConversation = true;
+				index = -1;
+			}
+		}
+		return answer;
+	}
+		
 	public static String getGoodByeMessage() { 
 		if (injury != null) { 
 			if (injury.getInjury().equals("stich")) { 
@@ -128,5 +164,13 @@ public class Conversation {
 		else {
 			return "Ich hoffe, ich konnte dir weiterhelfen.";
 		}
+	}
+	
+	public static void setLastInjury(String lastInjuryString) { 
+		lastInjury = new Injury(lastInjuryString); 
+	}
+	
+	public static String getLastInjury() {
+		return lastInjury.getInjury();
 	}
 }
