@@ -28,7 +28,7 @@ import com.amazon.ask.model.Slot;
 import com.amazon.ask.response.ResponseBuilder;
 
 import main.java.beesafe.SpeechStrings;
-import main.java.beesafe.model.SeriesOfAnswers;
+import main.java.beesafe.model.Conversation;
 
 public class YesIntentHandler implements RequestHandler {
 	
@@ -39,7 +39,7 @@ public class YesIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-    	String answer = MyInjuryIsIntentHandler.series.getNextAnswer(true); 
+    	String answer = Conversation.getNextAnswer(true); 
     	String speechText = answer; 
     	String repromptText = answer;
     	boolean isAskResponse = false;	    	
