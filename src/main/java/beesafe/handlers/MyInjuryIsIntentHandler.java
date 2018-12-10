@@ -30,13 +30,11 @@ import com.amazon.ask.response.ResponseBuilder;
 
 import main.java.beesafe.SpeechStrings;
 import main.java.beesafe.model.Injury;
-import main.java.beesafe.model.SeriesOfAnswers; 
+import main.java.beesafe.model.Conversation; 
 
 public class MyInjuryIsIntentHandler implements RequestHandler {
 	public static final String INJURY_SLOT = "Injury";
-	public static final String INJURY_KEY = "INJURY";
-	public static Injury injury; 
-	public static SeriesOfAnswers series; 
+	public static final String INJURY_KEY = "INJURY"; 
 	
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -51,37 +49,13 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        Slot injurySlot = slots.get(INJURY_SLOT);
-        injury = new Injury(injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
-        
-        series = new SeriesOfAnswers(injury); 
-
-        String speechText, repromptText;
+        Slot injurySlot = slots.get(INJURY_SLOT);      
+        Conversation.setInjury(injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
+         
+        String speechText = Conversation.getAnswerToInjury();
+        String repromptText = Conversation.getAnswerToInjury_Reprompt();
         boolean isAskResponse = false;
 
-        // Check for injury and create output to user.
-        if (injury != null) {
-            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(INJURY_KEY, injury));
-
-            if (injury.getInjury().equals("stich")) {
-        		speechText = "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?";
-        		repromptText = SpeechStrings.injuryIsStich_Message_Reprompt;
-            }
-        	else if (injury.getInjury().equals("sonnenbrand")) { 
-        		speechText = "Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?";
-        		repromptText = SpeechStrings.injuryIsSonnenbrand_Message_Reprompt;
-        	}
-        	else {
-        		speechText = "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Naehe: ";
-        		repromptText = String.format("Bei %s kann ich dir leider nicht helfen. Geh doch zur naechsten Notaufnahme. ", injury);
-        	}
-
-        } else {
-            // Render an error since we don't know what the users injury is.
-            speechText = "Ich habe dich leider nicht verstanden. Kannst du mir deine Verletzung nochmal sagen?";
-            repromptText = "Ich weiss nicht was Deine Verletzung ist. Sag mir Deine Verletzung nochmal.";
-            isAskResponse = true;
-        }
 
         ResponseBuilder responseBuilder = input.getResponseBuilder();
 
