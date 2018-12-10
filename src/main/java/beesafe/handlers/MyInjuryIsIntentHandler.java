@@ -19,6 +19,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
+import com.amazon.ask.attributes.AttributesManager;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Intent;
@@ -30,11 +31,11 @@ import com.amazon.ask.response.ResponseBuilder;
 
 import main.java.beesafe.SpeechStrings;
 import main.java.beesafe.model.Injury;
+import main.java.beesafe.model.Conversation; 
 
 public class MyInjuryIsIntentHandler implements RequestHandler {
 	public static final String INJURY_SLOT = "Injury";
-	public static final String INJURY_KEY = "INJURY";
-	public static Injury injury; 
+	public static final String INJURY_KEY = "INJURY"; 
 	
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -49,36 +50,23 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        injury = new Injury(slots.get(INJURY_SLOT).getValue());
+        Slot injurySlot = slots.get(INJURY_SLOT);     
+        Conversation.setInjury(injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
         
-        System.out.println(injury.getInjury());
+        Injury lastInjury = new Injury(injurySlot.getValue());
+        input.getAttributesManager().setSessionAttributes(Collections.singletonMap("LAST_INJURY", lastInjury.getInjury()));
 
-        String speechText, repromptText;
+        //store persistent
+        AttributesManager attributesManager = input.getAttributesManager();
+        Map<String, Object> persistentAttributes = attributesManager.getPersistentAttributes();
+        persistentAttributes.put("LAST_INJURY", lastInjury.getInjury());
+        attributesManager.setPersistentAttributes(persistentAttributes);
+        attributesManager.savePersistentAttributes();
+         
+        String speechText = Conversation.getAnswerToInjury();
+        String repromptText = Conversation.getAnswerToInjury_Reprompt();
         boolean isAskResponse = false;
 
-        // Check for injury and create output to user.
-        if (injury != null) {
-            input.getAttributesManager().setSessionAttributes(Collections.singletonMap(INJURY_KEY, injury));
-
-            if (injury.getInjury().equals("stich")) {
-        		speechText = SpeechStrings.injuryIsStich_Message;
-        		repromptText = SpeechStrings.injuryIsStich_Message_Reprompt;
-            }
-        	else if (injury.getInjury().equals("sonnenbrand")) { 
-        		speechText = SpeechStrings.injuryIsSonnenbrand_Message;
-        		repromptText = SpeechStrings.injuryIsSonnenbrand_Message_Reprompt;
-        	}
-        	else {
-        		speechText = "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Naehe: ";
-        		repromptText = String.format("Bei %s kann ich dir leider nicht helfen. Geh doch zur naechsten Notaufnahme. ", injury);
-        	}
-
-        } else {
-            // Render an error since we don't know what the users injury is.
-            speechText = "Ich habe dich leider nicht verstanden. Kannst du mir deine Verletzung nochmal sagen?";
-            repromptText = "Ich weiss nicht was Deine Verletzung ist. Sag mir Deine Verletzung nochmal.";
-            isAskResponse = true;
-        }
 
         ResponseBuilder responseBuilder = input.getResponseBuilder();
 
