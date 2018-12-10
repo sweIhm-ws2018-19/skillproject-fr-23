@@ -23,7 +23,7 @@ public class SeriesOfAnswers {
 			answersToYes.add("Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht."); 
 			answersToYes.add("Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle.");
 			
-			answersToNo.add("Wurdest du an einer gefährlichen Stelle gestochen?"); 
+			answersToNo.add("Wo wurdest du gestochen?"); 
 			answersToNo.add("OK das hört sich nicht so schlimm an! Ist es denn stark geschwollen oder hast du Atemnot?"); 
 			answersToNo.add("Perfekt! Dann ist es nicht schlimm bleib ruhig und befolge Omas Rat. Hast du Venestil zu Hause?"); 
 			answersToNo.add("Nicht schlimm, lass mich mal in der Küche schauen, was passen könnte. <break time =\"1s\"/> Ah! Ich habe was gefunden! Hast du vielleicht eine Zitrone oder eine Zwiebel zu Hause?"); 

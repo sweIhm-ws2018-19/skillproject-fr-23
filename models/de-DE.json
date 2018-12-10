@@ -19,6 +19,14 @@
                     "name": "GoodByeIntent",
                     "slots": [],
                     "samples": [
+                        "alles klar danke",
+                        "perfekt danke",
+                        "du hast mir echt geholfen",
+                        "super danke",
+                        "danke das hilft",
+                        "du hast mir geholfen",
+                        "vielen dank",
+                        "okay geht klar",
                         "danke fuer die hilfe",
                         "okay",
                         "alles klar",
@@ -36,6 +44,17 @@
                         }
                     ],
                     "samples": [
+                        "Die {Injury} hat mich verbrannt",
+                        "Mich hat etwas {Injury}",
+                        "I hob an {Injury}",
+                        "Mein Arm ist {Injury}",
+                        "Mich hat ein {Injury} erwischt",
+                        "Ich habe ein {Injury} ",
+                        "Ich habe mich auf eine {Injury} gesetzt",
+                        "Ich wurde von einer {Injury} gestochen",
+                        "Eine {Injury} hat mich gestochen",
+                        "Ich habe eine {Injury}",
+                        "Ich bin in eine {Injury} gestiegen",
                         " Ich habe einen {Injury}",
                         " Meine Verletzung ist ein {Injury}",
                         " Ich wurde {Injury}"
@@ -48,22 +67,256 @@
                 {
                     "name": "AMAZON.ResumeIntent",
                     "samples": []
-                },                             
+                },
                 {
                     "name": "YesIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "Risk",
+                            "type": "LIST_OF_RISKS"
+                        },
+                        {
+                            "name": "Treatment",
+                            "type": "LIST_OF_TREATMENTS"
+                        }
+                    ],
                     "samples": [
+                        "ich habe {Treatment} vorrätig",
+                        "hab {Treatment} da",
+                        "ich habe {Treatment} daheim",
+                        "ich habe beides",
+                        "ich habe {Treatment} zur Hand",
+                        "ich habe {Treatment} zuhause",
+                        "hab beides hier",
+                        "selbstverständlich",
+                        "logo",
+                        "beides",
+                        "aloe vera und feuchtigkeitscreme",
+                        "feuchtigkeitscreme",
+                        "aloe vera",
+                        "hab ne {Treatment}",
+                        "hab ich da",
+                        "klingt gut",
+                        "mach das",
+                        "bestätigen",
+                        "i hob {Treatment}",
+                        "ich besitze {Treatment}",
+                        "ich besitze eine {Treatment}",
+                        "ich habe eine {Treatment} da",
+                        "man hat eine {Treatment}",
+                        "ich hab eine {Treatment}",
+                        "besitze eine {Treatment}",
+                        "hab eine {Treatment}",
+                        "hob a {Treatment}",
+                        "hob a {Treatment} do",
+                        "ich habe {Treatment}",
+                        "ich habe eine {Treatment} ",
+                        "besitze ich",
+                        "habe ich da",
+                        "ja habe ich",
+                        "habe ich",
+                        "perfekt habe ich",
+                        "sehr {Risk} überall",
+                        "alles tut weh",
+                        "es tut weh ",
+                        "atemnot",
+                        "hob an {Risk}",
+                        "mir gehts {Risk}",
+                        "richtig {Risk}",
+                        "sieht {Risk} aus",
+                        "ich glaube mir gehts nicht gut",
+                        "schon",
+                        "ja schon",
+                        "weiß nicht genau",
+                        "habe {Risk} ",
+                        "schon {Risk}",
+                        "sehr {Risk}",
+                        "hilfe",
+                        "hilfeeee",
+                        "kann nicht {Risk}",
+                        "geschwollen",
+                        "krieg keine Luft",
+                        "meine lunge ist {Risk}",
+                        "ich ko ned {Risk}",
+                        "mir wird {Risk}",
+                        "ich habe eine {Risk} ",
+                        "ich wurde im {Risk} gestochen",
+                        "Mein Stich ist am {Risk}",
+                        "auf dem {Risk}",
+                        "auf der {Risk}",
+                        "an der {Risk}",
+                        "ich hab sie {Risk}",
+                        "am {Risk}",
+                        "an den {Risk}",
+                        "im {Risk}",
+                        "an {Risk}",
+                        "yes",
+                        "auf jeden fall",
+                        "bin i",
+                        "mir gehts nicht gut",
+                        "bin {Risk}",
+                        "hab {Risk}",
+                        "ich bin {Risk}",
+                        "mir ist {Risk}",
+                        "ich habe {Risk}",
+                        "ich hab {Risk}",
+                        "das ist richtig",
+                        "natürlich",
+                        "genau",
+                        "kleine {Risk}",
+                        "große {Risk}",
+                        "viele {Risk}",
+                        "ein paar {Risk}",
+                        "ich sehe {Risk}",
+                        "mehrere",
+                        "einige",
+                        "richtig",
+                        "klar",
                         "hab ich ",
                         "ja"
                     ]
                 },
                 {
                     "name": "NoIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "Risk",
+                            "type": "LIST_OF_RISKS"
+                        },
+                        {
+                            "name": "Treatment",
+                            "type": "LIST_OF_TREATMENTS"
+                        },
+                        {
+                            "name": "NoRisk",
+                            "type": "LIST_OF_NO_RISKS"
+                        }
+                    ],
                     "samples": [
+                        "unter den {NoRisk}",
+                        "ich habe keinen {Treatment} daheim",
+                        "überhaupt kein {Treatment}",
+                        "gar keine {Treatment}",
+                        "gar keinen {Treatment}",
+                        "ich mag keinen {Treatment}",
+                        "ich trinke keinen {Treatment}",
+                        "weder noch",
+                        "ich habe keine {Treatment} da",
+                        "ich habe kein {Treatment} da",
+                        "ich habe keinen {Treatment} da",
+                        "keines von beidem",
+                        "hab keine {Treatment} da",
+                        "hab kein {Treatment} da",
+                        "hab keinen {Treatment} da",
+                        "habe keinen {Treatment} zur hand",
+                        "habe keine {Treatment} zur hand",
+                        "hab keine {Treatment} daheim",
+                        "hab kein {Treatment} daheim",
+                        "hab keinen {Treatment} daheim",
+                        "ich glaube nicht",
+                        "ich denk ned",
+                        "ich habe keinen {Treatment}",
+                        "ich habe kein {Treatment}",
+                        "nein habe kein {Treatment}",
+                        "kein {Treatment}",
+                        "no {Treatment}",
+                        "keinen {Treatment}",
+                        "keine {Treatment}",
+                        "hab beides nicht",
+                        "besitze keines von beiden",
+                        "besitze keines davon",
+                        "hab nichts im kühlschrank",
+                        "hob koa {Treatment} do",
+                        "hob kei {Treatment} da",
+                        "habe keine {Treatment}",
+                        "hab keine {Treatment}",
+                        "ich hab keine {Treatment}",
+                        "ich habe keine {Treatment}",
+                        "leider nein",
+                        "nein leider nicht",
+                        "besitze ich nicht",
+                        "gehört mir nicht",
+                        "hob i ned da",
+                        "nooo",
+                        "nein hab ich nicht",
+                        "nein habe ich nicht",
+                        "geht",
+                        "nein geht",
+                        "ich sehe nichts",
+                        "glaube nicht ",
+                        "fast gar nicht",
+                        "nicht {Risk}",
+                        "sieht gut aus",
+                        "sieht normal",
+                        "da ist nichts",
+                        "nur ganz leicht",
+                        "ich mach mir keine sorgen",
+                        "keine {Risk}",
+                        "alles super",
+                        "nix",
+                        "nicht",
+                        "nada",
+                        "niente",
+                        "mein stich ist an der {NoRisk}",
+                        "ich wurde an der {NoRisk} gestochen",
+                        "am {NoRisk} ist mein stich",
+                        "i hob an stich am {NoRisk}",
+                        "am {NoRisk} tut es weh",
+                        "ich wurde am {NoRisk} gestochen",
+                        "der stich ist am {NoRisk}",
+                        "der stich ist an der {NoRisk}",
+                        "mir tut der {NoRisk} weh",
+                        "mia duad da {NoRisk} weh",
+                        "unter der {NoRisk}",
+                        "zwischen den {NoRisk}",
+                        "auf der {NoRisk}",
+                        "aufm {NoRisk}",
+                        "auf dem {NoRisk}",
+                        "an der {NoRisk}",
+                        "am {NoRisk}",
+                        "an einer {NoRisk}",
+                        "alles in ordnung",
+                        "alles ok",
+                        "nö",
+                        "auf keinen fall",
+                        "ne",
+                        "davon weiß ich nichts",
+                        "ist mir nicht bekannt",
+                        "hatte ich noch nicht",
+                        "hob i ned",
+                        "hatte noch keinen",
+                        "keine ahnung",
+                        "hab i ned",
+                        "weiß ich nicht",
+                        "ich bin nicht {Risk}",
+                        "beides nicht",
+                        "keines von beiden",
+                        "glaub nicht",
+                        "glaub ned",
+                        "alles nicht",
+                        "nichts",
+                        "alles gut",
+                        "passt alles",
+                        "habe keine {Risk}",
+                        "habe kein {Risk}",
+                        "alles ist so wie immer",
+                        "mir gehts gut",
+                        "hab keine {Risk}",
+                        "ich hab keine {Risk}",
+                        "ich habe keine {Risk}",
+                        "nope",
+                        "nee",
+                        "eigentlich nicht",
+                        "nein danke",
+                        "es ist nur rot",
+                        "ich sehe keine {Risk}",
                         "hab ich nicht",
                         "nein"
                     ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
                 }
             ],
             "types": [
@@ -74,6 +327,16 @@
                             "name": {
                                 "value": "stich",
                                 "synonyms": [
+                                    "stachel",
+                                    "geschwollen",
+                                    "tier",
+                                    "hornisse",
+                                    "hornissenstich",
+                                    "roten punkt",
+                                    "geschwollenen roten punkt",
+                                    "geschwollene stelle",
+                                    "wespe",
+                                    "biene",
                                     "bienenstich",
                                     "wespenstich",
                                     "gestochen"
@@ -82,7 +345,203 @@
                         },
                         {
                             "name": {
-                                "value": "sonnenbrand"
+                                "value": "sonnenbrand",
+                                "synonyms": [
+                                    "sonne"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_TREATMENTS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "gurke"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tee",
+                                "synonyms": [
+                                    "schwarzen tee und kamillentee",
+                                    "kamillentee",
+                                    "schwarzen tee",
+                                    "schwarzer tee"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aloe vera",
+                                "synonyms": [
+                                    "creme",
+                                    "feuchtigkeitscreme"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "backpulver",
+                                "synonyms": [
+                                    "mehl"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zwiebel",
+                                "synonyms": [
+                                    "zitrone und zwiebel",
+                                    "zwiebel und zitrone",
+                                    "zitrone oder zwiebel",
+                                    "zwiebel oder zitrone",
+                                    "zitrone"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "venestil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quark",
+                                "synonyms": [
+                                    "quark oder joghurt",
+                                    "quark und joghurt",
+                                    "joghurt"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_RISKS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "schwellung",
+                                "synonyms": [
+                                    "schwellungen",
+                                    "sehr geschwollen",
+                                    "gescheid atmen",
+                                    "schwindlig",
+                                    "rot und geschwollen",
+                                    "geschwollenen stich",
+                                    "scheiße",
+                                    "schlecht",
+                                    "dick",
+                                    "meine lunge",
+                                    "probleme beim Atmen",
+                                    "atemnot",
+                                    "schwummrig",
+                                    "starke schwellung"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gefährliche stelle",
+                                "synonyms": [
+                                    "einer gefährlichen stelle",
+                                    "gesicht",
+                                    "ohr",
+                                    "nase",
+                                    "mund",
+                                    "schleimhäuten",
+                                    "stimmbändern",
+                                    "auge",
+                                    "hals",
+                                    "rachen",
+                                    "zahnfleisch",
+                                    "lippe",
+                                    "zunge",
+                                    "penis",
+                                    "rachenbereich",
+                                    "unterlippe",
+                                    "oberlippe",
+                                    "verschluckt",
+                                    "gaumen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "allergisch",
+                                "synonyms": [
+                                    "Schwellung",
+                                    "eine Allergie",
+                                    "Allergie",
+                                    "geschwollen",
+                                    "eine dicke Stelle"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blasen",
+                                "synonyms": [
+                                    "eine blase",
+                                    "blase"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fieber",
+                                "synonyms": [
+                                    "probleme mit dem kreislauf",
+                                    "probleme mit meinem kreislauf",
+                                    "schwarz vor augen",
+                                    "schwindelig",
+                                    "kreislaufprobleme und fieber",
+                                    "fieber und kreislaufprobleme",
+                                    "kreislaufprobleme"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_NO_RISKS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ungefährliche stelle",
+                                "synonyms": [
+                                    "achseln",
+                                    "ungefährlichen stelle",
+                                    "schulter",
+                                    "rücken",
+                                    "arsch",
+                                    "po",
+                                    "pobacke",
+                                    "oberschenkel",
+                                    "schienbein",
+                                    "knie",
+                                    "wade",
+                                    "bein",
+                                    "zehe",
+                                    "oberarm",
+                                    "unterarm",
+                                    "arm",
+                                    "hand",
+                                    "finger",
+                                    "zehen",
+                                    "achsel",
+                                    "ferse",
+                                    "fußballen",
+                                    "fußunterseite",
+                                    "fuß",
+                                    "brust",
+                                    "bauch",
+                                    "kniekehle",
+                                    "wadl",
+                                    "wadln"
+                                ]
                             }
                         }
                     ]
