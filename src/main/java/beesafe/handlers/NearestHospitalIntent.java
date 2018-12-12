@@ -37,7 +37,7 @@ public class NearestHospitalIntent implements RequestHandler{
         	HospitalFinder hospital = new HospitalFinder();
         	String[] address = hospital.getNextHospitalAddress(location);
         	if(address != null) {
-        		answer = "Das naechste Krankenhaus ist " + address[0] + " in der " + address[1] + " " + address[2];
+        		answer = "Am nächstgelegene Krankenhaus ist das " + address[0] + " in der " + address[1] + ". In " + address[2];
         	} else {
         		answer = "Leider konnte ich fuer deine Adresse kein Krankenhaus finden. Ruf doch bitte den Notruf unter 112 an.";
         	}
