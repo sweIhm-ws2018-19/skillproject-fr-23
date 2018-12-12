@@ -21,7 +21,7 @@ public class HospitalFinder {
     private String id;
     private String app_code;
     
-    HospitalFinder() {
+    public HospitalFinder() {
         this.id = "Cg97H0BDUFqJPuMj6dyB";
         this.app_code = "Ta5UKGEqT6z2QtPNRPzqCA";
     }
@@ -31,7 +31,7 @@ public class HospitalFinder {
      * @param location the parts of the location must be seperated with '+', or else here.com cannot evaluate the geocoordinates
      * @return the geocoordinates in format latitude,longitude or a empty string
      */
-    public String getGeoCoordinates(String location) {
+    private String getGeoCoordinates(String location) {
     	String coord = "";
         try {
             location = URLEncoder.encode(location, "UTF-8");
@@ -68,7 +68,7 @@ public class HospitalFinder {
      * 		[1] = street
      * 		[2] = city and postal code
      */
-    public String[] getNextHospital(String coord) {  	
+    private String[] getNextHospital(String coord) {  	
     	String[] hospitalContact = new String[3];
     	try {
             coord = URLEncoder.encode(coord, "UTF-8");
@@ -95,6 +95,18 @@ public class HospitalFinder {
         	hospitalContact = null;
         }
     	return hospitalContact;
+    }
+    
+    /**
+     * gets the hospital address for a location. 
+     * @param location the location from whoch the search should originate. location must be in format word+word e.g.: marienplatz+1+muenchen
+     * @return the address of the next hospital or null when sth went wrong. result array:
+     * 		[0] = hospital name
+     * 		[1] = street
+     * 		[2] = city and postal code
+     */
+    public String[] getNextHospitalAddress(String location) {
+    	return this.getNextHospital(getGeoCoordinates(location));
     }
     
 }

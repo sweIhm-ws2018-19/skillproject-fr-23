@@ -23,6 +23,7 @@ import main.java.beesafe.handlers.GoodByeIntentHandler;
 import main.java.beesafe.handlers.HelpIntentHandler;
 import main.java.beesafe.handlers.LaunchRequestHandler;
 import main.java.beesafe.handlers.MyInjuryIsIntentHandler;
+import main.java.beesafe.handlers.NearestHospitalIntent;
 import main.java.beesafe.handlers.SessionEndedRequestHandler;
 import main.java.beesafe.handlers.YesIntentHandler;
 import main.java.beesafe.handlers.NoIntentHandler;
@@ -41,7 +42,8 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
                         new FallbackIntentHandler(),
                 		new GoodByeIntentHandler(),
                 		new YesIntentHandler(),
-                		new NoIntentHandler())
+                		new NoIntentHandler(),
+                		new NearestHospitalIntent())
                 // Add your skill id below
                 //.withSkillId("")
                 .build();

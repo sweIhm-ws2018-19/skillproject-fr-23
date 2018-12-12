@@ -94,6 +94,21 @@
                 {
                     "name": "AMAZON.NavigateHomeIntent",
                     "samples": []
+                },
+                {
+                    "name": "NearestHospitalIntent",
+                    "slots": [
+                        {
+                            "name": "address",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "adresse {address}",
+                        "ich bin an {address}",
+                        "ich wohne in {address} ",
+                        "meine adresse ist {address}"
+                    ]
                 }
             ],
             "types": [
