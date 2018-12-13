@@ -1,4 +1,4 @@
-package main.java.beesafe.model;
+﻿package main.java.beesafe.model;
 
 public class Conversation {
 	private static int index = -1; 
@@ -56,6 +56,7 @@ public class Conversation {
 	};
 	
 	public static void reset() { 
+		injury = null; 
 		index = -1;
 		nowConversation = (lastInjury == null);
 	}
