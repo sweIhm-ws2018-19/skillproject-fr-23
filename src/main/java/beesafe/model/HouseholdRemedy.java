@@ -28,8 +28,7 @@ public class HouseholdRemedy {
 	}
 	
 	public String toString() {
-		String toString = String.format("Name: %s\nVorraetig: %s\n"
+		return String.format("Name: %s\nVorraetig: %s\n"
 				+ "Anwendung: %s", name, instock, action);
-		return toString;
 	}
 }
