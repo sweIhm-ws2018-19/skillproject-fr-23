@@ -50,7 +50,7 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Conversation.setInjury(injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
          
         String speechText = Conversation.getAnswerToInjury();
-        String repromptText = Conversation.getAnswerToInjuryReprompt();
+        String repromptText = Conversation.getAnswerToInjury_Reprompt();
         boolean isAskResponse = false;
 
 
