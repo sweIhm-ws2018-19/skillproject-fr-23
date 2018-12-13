@@ -22,6 +22,6 @@ public class Risk {
 	}
 	
 	public String toString() {
-		return String.format("Name: %s\nAufgetreten: %s", name, isOccured);
+		return String.format("Name: %s\n" + "Aufgetreten: %s", name, isOccured);
 	}
 }

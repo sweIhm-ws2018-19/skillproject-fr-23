@@ -17,7 +17,7 @@ public class Emergency {
 	}
 	
 	public String toString() {
-		return String.format("Notrufnummer: %s\nAdresse: %s",
+		return String.format("Notrufnummer: %s\n" + "Adresse: %s",
 				emergencyCall, address);
 	}
 }
