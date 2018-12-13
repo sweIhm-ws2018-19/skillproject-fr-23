@@ -15,19 +15,13 @@ package main.java.beesafe.handlers;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
-import java.util.Map;
 import java.util.Optional;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.model.Intent;
-import com.amazon.ask.model.IntentRequest;
-import com.amazon.ask.model.Request;
 import com.amazon.ask.model.Response;
-import com.amazon.ask.model.Slot;
 import com.amazon.ask.response.ResponseBuilder;
 
-import main.java.beesafe.SpeechStrings;
 import main.java.beesafe.model.Conversation; 
 
 public class NoIntentHandler implements RequestHandler {
@@ -40,19 +34,12 @@ public class NoIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {  
     	String answer = Conversation.getNextAnswer(false);
-    	String speechText = answer; 
-    	String repromptText = answer;
-    	boolean isAskResponse = false;	    	
+    	String speechText = answer; 	    	
     	ResponseBuilder responseBuilder = input.getResponseBuilder();
 
         responseBuilder.withSimpleCard("ColorSession", speechText)
                 .withSpeech(speechText)
                 .withShouldEndSession(false);
-
-        if (isAskResponse) {
-            responseBuilder.withShouldEndSession(false)
-                    .withReprompt(repromptText);
-        }
 
         return responseBuilder.build();
     }

@@ -15,7 +15,6 @@ package main.java.beesafe.handlers;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
-import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
@@ -28,8 +27,6 @@ import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 import com.amazon.ask.response.ResponseBuilder;
 
-import main.java.beesafe.SpeechStrings;
-import main.java.beesafe.model.Injury;
 import main.java.beesafe.model.Conversation; 
 
 public class MyInjuryIsIntentHandler implements RequestHandler {
