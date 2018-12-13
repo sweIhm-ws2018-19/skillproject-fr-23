@@ -47,7 +47,7 @@ public class InjuryTest {
 		Injury stich = new Injury("bienenstich");
 		stich.setHouseholds(households);
 		stich.setRisks(risks);
-		assertEquals("Name: bienenstich\nRisikofaktoren: \nName: risk\nAufgetreten: false\n"+
+		assertEquals("Name: bienenstich\nRisikofaktoren:\nName: risk\nAufgetreten: false\n"+
 				"Hausmittel: \nName: bla\nVorraetig: false\nAnwendung: blub\n",stich.toString());
 	}
 	
