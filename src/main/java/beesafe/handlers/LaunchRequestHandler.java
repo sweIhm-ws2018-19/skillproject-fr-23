@@ -33,6 +33,7 @@ public class LaunchRequestHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) { 
+    	Conversation.reset();
     	if(Conversation.getLastInjury().equals(null)) {
 	        return input.getResponseBuilder()
 	                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
