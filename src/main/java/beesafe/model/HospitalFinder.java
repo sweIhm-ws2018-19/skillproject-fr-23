@@ -40,7 +40,7 @@ public class HospitalFinder {
             location = URLEncoder.encode(location, ENCODING);
             HttpsURLConnection connection = (HttpsURLConnection) new URL("https://geocoder.api.here.com/6.2/geocode.json"
                     + "?app_id=" + id
-                    + "&appCode=" + appCode
+                    + "&app_code=" + appCode
                     + "&searchtext=" + location).openConnection();
             int responseCode = connection.getResponseCode();
             if (responseCode == 200 || responseCode == 201) {
@@ -78,7 +78,7 @@ public class HospitalFinder {
             coord = URLEncoder.encode(coord, ENCODING);
             HttpsURLConnection connection = (HttpsURLConnection) new URL("https://places.cit.api.here.com/places/v1/discover/search"
                     + "?app_id=" + id
-                    + "&appCode=" + appCode
+                    + "&app_code=" + appCode
                     + "&at=" + coord
                     + "&q=krankenhaus").openConnection();
             connection.setRequestProperty("accept", "application/json");
