@@ -32,9 +32,9 @@ public class HelpIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
         return input.getResponseBuilder()
-                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.helpMessage)
-                .withSpeech(SpeechStrings.helpMessage)
-                .withReprompt(SpeechStrings.helpMessage_Reprompt)
+                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, SpeechStrings.HELP_MESSAGE)
+                .withSpeech(SpeechStrings.HELP_MESSAGE)
+                .withReprompt(SpeechStrings.HELP_MESSAGE_REPROMT)
                 .withShouldEndSession(false)
                 .build();
     }

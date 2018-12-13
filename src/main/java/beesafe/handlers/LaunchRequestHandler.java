@@ -36,15 +36,15 @@ public class LaunchRequestHandler implements RequestHandler {
     	Conversation.reset();
     	if(Conversation.getLastInjury() == null) {
 	        return input.getResponseBuilder()
-	                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
-	                .withSpeech(SpeechStrings.welcomeMessage)
-	                .withReprompt(SpeechStrings.welcomeMessage_Reprompt)
+	                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, SpeechStrings.WELCOME_MESSAGE)
+	                .withSpeech(SpeechStrings.WELCOME_MESSAGE)
+	                .withReprompt(SpeechStrings.WELCOME_MESSAGE_REPROMT)
 	                .build();
     	} else {
     		return input.getResponseBuilder()
-	                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeWithLastInjury)
-	                .withSpeech(SpeechStrings.welcomeWithLastInjury)
-	                .withReprompt(SpeechStrings.welcomeWithLastInjury_Reprompt)
+	                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, SpeechStrings.WELCOME_WITH_LAST_INJURY)
+	                .withSpeech(SpeechStrings.WELCOME_WITH_LAST_INJURY)
+	                .withReprompt(SpeechStrings.WELCOME_WITH_LAST_INJURY_REPROMT)
 	                .build();
     	}
     }

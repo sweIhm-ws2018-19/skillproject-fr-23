@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -19,13 +20,13 @@ import com.eclipsesource.json.*;
  *
  */
 public class HospitalFinder {
-	private static final String ENCODING = "UTF-8";
+	private static final String ENCODING = StandardCharsets.UTF_8.name();
     private String id;
-    private String app_code;
+    private String appCode;
     
     public HospitalFinder() {
         this.id = "Cg97H0BDUFqJPuMj6dyB";
-        this.app_code = "Ta5UKGEqT6z2QtPNRPzqCA";
+        this.appCode = "Ta5UKGEqT6z2QtPNRPzqCA";
     }
     
     /**
@@ -39,7 +40,7 @@ public class HospitalFinder {
             location = URLEncoder.encode(location, ENCODING);
             HttpsURLConnection connection = (HttpsURLConnection) new URL("https://geocoder.api.here.com/6.2/geocode.json"
                     + "?app_id=" + id
-                    + "&app_code=" + app_code
+                    + "&appCode=" + appCode
                     + "&searchtext=" + location).openConnection();
             int responseCode = connection.getResponseCode();
             if (responseCode == 200 || responseCode == 201) {
@@ -77,14 +78,14 @@ public class HospitalFinder {
             coord = URLEncoder.encode(coord, ENCODING);
             HttpsURLConnection connection = (HttpsURLConnection) new URL("https://places.cit.api.here.com/places/v1/discover/search"
                     + "?app_id=" + id
-                    + "&app_code=" + app_code
+                    + "&appCode=" + appCode
                     + "&at=" + coord
                     + "&q=krankenhaus").openConnection();
             connection.setRequestProperty("accept", "application/json");
             
             int responseCode = connection.getResponseCode();
             if (responseCode == 200 || responseCode == 201) {
-                JsonObject obj = Json.parse(new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))).asObject();
+                JsonObject obj = Json.parse(new BufferedReader(new InputStreamReader(connection.getInputStream(), ENCODING))).asObject();
                 obj = obj.get("results").asObject();
                 JsonArray array = obj.get("items").asArray();
                 obj = array.get(0).asObject();
