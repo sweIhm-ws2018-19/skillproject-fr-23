@@ -1,6 +1,8 @@
 package test.java;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -10,7 +12,7 @@ import main.java.beesafe.model.HouseholdRemedy;
 import main.java.beesafe.model.Injury;
 import main.java.beesafe.model.Risk;
 
-public class InjuryTest {
+public class InjuryAlternativeTest {
 
 	@Test
 	public void test() {
@@ -36,4 +38,26 @@ public class InjuryTest {
 		assertEquals("Stich", bienenstich.getInjury());
 	}
 
+	@Test
+	public void testToString() {
+		ArrayList<HouseholdRemedy> households = new ArrayList<>();
+		households.add(new HouseholdRemedy("bla", "blub"));
+		ArrayList<Risk> risks = new ArrayList<>();	
+		risks.add(new Risk("risk"));
+		Injury stich = new Injury("bienenstich");
+		stich.setHouseholds(households);
+		stich.setRisks(risks);
+		assertEquals("Name: bienenstich\nRisikofaktoren: \nName: risk\nAufgetreten: false\n"+
+				"Hausmittel: \nName: bla\nVorraetig: false\nAnwendung: blub\n",stich.toString());
+	}
+	
+	@Test
+	public void testIsValidTrue() {
+		assertTrue(new Injury("a").isValid());
+	}
+	
+	@Test
+	public void testIsValidFalse() {
+		assertFalse(new Injury("").isValid());
+	}
 }
