@@ -1,8 +1,5 @@
 ﻿package main.java.beesafe.model;
 
-import java.util.List; 
-import java.util.ArrayList;
-
 public class Conversation {
 	private static int index = -1; 
 	private static Injury injury = null; 
