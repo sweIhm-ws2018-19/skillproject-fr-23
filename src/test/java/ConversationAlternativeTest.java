@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import main.java.beesafe.model.Conversation;
 
-public class ConversationTest {
+public class ConversationAlternativeTest {
 		
 	@Test
 	public void testStichYes() {
@@ -16,9 +16,9 @@ public class ConversationTest {
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjury());
 		assertEquals("Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjuryReprompt());
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", Conversation.getNextAnswer(true));
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", Conversation.getNextAnswer(true));
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", Conversation.getNextAnswer(true));
+		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzündungshemmend und kühlt die Stelle. Versuche trotzdem die Stelle weiterhin zu kühlen. Vermeide es die Stelle zu kratzen.", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht.", Conversation.getNextAnswer(true));
 		assertEquals("Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle.", Conversation.getNextAnswer(true));

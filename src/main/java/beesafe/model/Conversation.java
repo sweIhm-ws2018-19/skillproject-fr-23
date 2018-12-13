@@ -7,15 +7,16 @@ public class Conversation {
 	private static final String STICH = "stich";
 	private static Injury lastInjury = new Injury(SONNENBRAND);
 	private static boolean nowConversation = (lastInjury == null);
+	private static final String HOSPITAL = "Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ";
 	
 	private Conversation() {
 	    throw new IllegalStateException("Utility class");
 	  }
 	
 	private static final String[] answersToYes_stich = new String[] {
-			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
-			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
-			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
+			HOSPITAL,
+			HOSPITAL,
+			HOSPITAL,
 			"Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzündungshemmend und kühlt die Stelle. Versuche trotzdem die Stelle weiterhin zu kühlen. Vermeide es die Stelle zu kratzen.", 
 			"Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht.", 
 			"Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle."
