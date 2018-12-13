@@ -15,7 +15,7 @@ public class ConversationTest {
 		Conversation.setInjury(injuryString); 
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjury());
-		assertEquals("Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjury());
+		assertEquals("Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjuryReprompt());
 		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", Conversation.getNextAnswer(true));
 		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", Conversation.getNextAnswer(true));
 		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", Conversation.getNextAnswer(true));
@@ -49,7 +49,7 @@ public class ConversationTest {
 		Conversation.setInjury(injuryString); 
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?", Conversation.getAnswerToInjury());
-		assertEquals("Siehst du Blasen an deinem Sonnenbrand?", Conversation.getAnswerToInjury());
+		assertEquals("Siehst du Blasen an deinem Sonnenbrand?", Conversation.getAnswerToInjuryReprompt());
 		assertEquals("Dann solltest du auf jeden Fall zu einem Arzt gehen. Hier sind die Notaufnahmen: ", Conversation.getNextAnswer(true));
 		assertEquals("Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Hier sind die nächsten Notaufnahmen:", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut! Trage es einfach großzügig auf den Sonnenbrand auf.", Conversation.getNextAnswer(true));
@@ -66,7 +66,7 @@ public class ConversationTest {
 		Conversation.setInjury(injuryString); 
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?", Conversation.getAnswerToInjury());
-		assertEquals("Siehst du Blasen an deinem Sonnenbrand?", Conversation.getAnswerToInjury());
+		assertEquals("Siehst du Blasen an deinem Sonnenbrand?", Conversation.getAnswerToInjuryReprompt());
 		assertEquals("Gut, hast du Kreislaufprobleme oder Fieber?", Conversation.getNextAnswer(false));
 		assertEquals("Sehr schön, dann lass mich mal in meinem schlauen Büchlein nachsehen. <audio src='soundbank://soundlibrary/human/amzn_sfx_walking_on_grass_02'/> Hast du Aloe Vera oder Feuchtigkeitscreme zur Hand?", Conversation.getNextAnswer(false));
 		assertEquals("Nicht schlimm, hast du Quark oder Joghurt daheim?", Conversation.getNextAnswer(false));
@@ -80,7 +80,7 @@ public class ConversationTest {
 	public void testNoInjury() {
 		Conversation.reset();
 		assertEquals("Ich habe dich leider nicht verstanden. Kannst du mir deine Verletzung nochmal sagen?", Conversation.getAnswerToInjury());
-		assertEquals("Bitte sag mir zuerst, was deine Verletzung ist.", Conversation.getAnswerToInjury());
+		assertEquals("Bitte sag mir zuerst, was deine Verletzung ist.", Conversation.getAnswerToInjuryReprompt());
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen", Conversation.getNextAnswer(true));
 		assertEquals("Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen", Conversation.getNextAnswer(false));
@@ -93,7 +93,7 @@ public class ConversationTest {
 		String injuryString = "kopfschmerzen"; 
 		Conversation.setInjury(injuryString); 
 		assertEquals("Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Naehe: ", Conversation.getAnswerToInjury());
-		assertEquals("Da kann ich dir leider nicht helfen. Geh doch zur naechsten Notaufnahme. ", Conversation.getAnswerToInjury());
+		assertEquals("Da kann ich dir leider nicht helfen. Geh doch zur naechsten Notaufnahme. ", Conversation.getAnswerToInjuryReprompt());
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh! da kenne ich mich leider nicht aus.", Conversation.getNextAnswer(true));
 		assertEquals("Oh! da kenne ich mich leider nicht aus.", Conversation.getNextAnswer(false));
