@@ -1,41 +1,42 @@
 package main.java.beesafe.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Injury {
-	private String injury;
-	private ArrayList<HouseholdRemedy> households;
-	private ArrayList<Risk> risks;
+	private String actualInjury;
+	private List<HouseholdRemedy> households;
+	private List<Risk> risks;
 	
 	public Injury(String injury) { 
-		this.injury = injury; 
+		this.actualInjury = injury; 
 	}
 	
 	public String getInjury() { 
-		return injury; 
+		return actualInjury; 
 	}
 	
-	public void setHouseholds(ArrayList<HouseholdRemedy> households) {
+	public void setHouseholds(List<HouseholdRemedy> households) {
 		this.households = households;
 	}
 	
-	public void setRisks(ArrayList<Risk> risks) {
+	public void setRisks(List<Risk> risks) {
 		this.risks = risks;
 	}
 	
 	public boolean isValid() { 
-		return (injury != null && !injury.isEmpty()); 
+		return (actualInjury != null && !actualInjury.isEmpty()); 
 	}
 	
 	public String toString() {
-		String toString = String.format("Name: %s\nRisikofaktoren: \n", injury);
+		StringBuilder bldr = new StringBuilder();
+		bldr.append(String.format("Name: %s" + "\nRisikofaktoren:" + "\n", actualInjury));
 		for(Risk r:risks) {
-			toString+= r.toString() + "\n";
+			bldr.append(r.toString() + "\n");
 		}
-		toString += "Hausmittel: \n";
+		bldr.append("Hausmittel: \n");
 		for(HouseholdRemedy h:households) {
-			toString += h.toString() + "\n";
+			bldr.append(h.toString() + "\n");
 		}
-		return toString;			
+		return bldr.toString();			
 	}
 }
