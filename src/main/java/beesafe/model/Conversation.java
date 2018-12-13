@@ -5,12 +5,9 @@ import java.util.ArrayList;
 
 public class Conversation {
 	private static int index = -1; 
-	private static final String SONNENBRAND = "sonnenbrand";
-	private static final String STICH = "stich";
 	private static Injury injury = null; 
-	private static Injury lastInjury = new Injury(SONNENBRAND);
+	private static Injury lastInjury = new Injury("sonnenbrand");
 	private static boolean nowConversation = lastInjury.getInjury().equals(null);
-
 	
 	private static final String[] answersToYes_stich = new String[] {
 			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
@@ -61,10 +58,10 @@ public class Conversation {
 	
 	public static String getAnswerToInjury() { 
 		if (injury != null) { 
-			if (injury.getInjury().equals(STICH)) {
+			if (injury.getInjury().equals("stich")) {
         		return "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?";
             }
-        	else if (injury.getInjury().equals(SONNENBRAND)) { 
+        	else if (injury.getInjury().equals("sonnenbrand")) { 
         		return "Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?";
         	}
         	else {
@@ -78,10 +75,10 @@ public class Conversation {
 	
 	public static String getAnswerToInjury_Reprompt() { 
 		if (injury != null) { 
-			if (injury.getInjury().equals(STICH)) {
+			if (injury.getInjury().equals("stich")) {
         		return "Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?";
             }
-        	else if (injury.getInjury().equals(SONNENBRAND)) { 
+        	else if (injury.getInjury().equals("sonnenbrand")) { 
         		return "Siehst du Blasen an deinem Sonnenbrand?";
         	}
         	else {
@@ -106,7 +103,7 @@ public class Conversation {
 	private static String nextAnswer(boolean answerIsYes) {
 		if (index < 6) { 
 			if (injury != null) { 
-				if (injury.getInjury().equals(STICH)) { 
+				if (injury.getInjury().equals("stich")) { 
 					if (answerIsYes) { 
 						return answersToYes_stich[index];
 					}
@@ -114,7 +111,7 @@ public class Conversation {
 						return answersToNo_stich[index];
 					}
 				}
-				else if (injury.getInjury().equals(STICH)) { 
+				else if (injury.getInjury().equals("stich")) { 
 					if (answerIsYes) { 
 						return answersToYes_sonnenbrand[index];
 					}
@@ -154,10 +151,10 @@ public class Conversation {
 		
 	public static String getGoodByeMessage() { 
 		if (injury != null) { 
-			if (injury.getInjury().equals(STICH)) { 
+			if (injury.getInjury().equals("stich")) { 
 				return "Und du weißt, Oma ist immer für dich da. Es kann passieren, dass sich der Stich infiziert dann solltest du nochmal zum Onkel Doktor schauen. Aber das passiert meistens nicht - du weißt doch, Oma ist immer übervorsichtig.";  
 			}
-			else if (injury.getInjury().equals(SONNENBRAND)) { 
+			else if (injury.getInjury().equals("sonnenbrand")) { 
 				return "Vergiss nicht viel zu trinken! Und du weißt, Oma ist immer für dich da. Falls doch noch Blasen entstehen, solltest du auf jeden Fall zu einem Arzt gehen. Das passiert aber selten - du weißt doch, Oma ist immer übervorsichtig."; 
 			}
 			else { 
