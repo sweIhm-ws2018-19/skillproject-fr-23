@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "wespenstich",
+            "invocationName": "bee safe",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -308,6 +308,7 @@
                         "nee",
                         "eigentlich nicht",
                         "nein danke",
+                        "ich denke nicht",
                         "es ist nur rot",
                         "ich sehe keine {Risk}",
                         "hab ich nicht",
