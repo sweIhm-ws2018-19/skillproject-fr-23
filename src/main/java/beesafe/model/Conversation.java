@@ -1,4 +1,4 @@
-﻿package main.java.beesafe.model;
+package main.java.beesafe.model;
 
 public class Conversation {
 	private static int index = -1; 
