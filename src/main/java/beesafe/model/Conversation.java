@@ -7,7 +7,7 @@ public class Conversation {
 	private static int index = -1; 
 	private static Injury injury = null; 
 	private static Injury lastInjury = new Injury("sonnenbrand");
-	private static boolean nowConversation = lastInjury.getInjury().equals(null);
+	private static boolean nowConversation = (lastInjury == null);
 	
 	private static final String[] answersToYes_stich = new String[] {
 			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
@@ -57,6 +57,7 @@ public class Conversation {
 	}
 	
 	public static String getAnswerToInjury() { 
+		index = -1;
 		if (injury != null) { 
 			if (injury.getInjury().equals("stich")) {
         		return "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?";
@@ -111,7 +112,7 @@ public class Conversation {
 						return answersToNo_stich[index];
 					}
 				}
-				else if (injury.getInjury().equals("stich")) { 
+				else if (injury.getInjury().equals("sonnenbrand")) { 
 					if (answerIsYes) { 
 						return answersToYes_sonnenbrand[index];
 					}
