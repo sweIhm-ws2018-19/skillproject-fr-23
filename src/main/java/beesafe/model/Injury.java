@@ -28,11 +28,11 @@ public class Injury {
 	}
 	
 	public String toString() {
-		String toString = String.format("Name: %s\n\nRisikofaktoren: \n", injury);
-		toString += "\nRisikofaktoren: \n";
+		String toString = String.format("Name: %s\nRisikofaktoren: \n", injury);
 		for(Risk r:risks) {
 			toString+= r.toString() + "\n";
 		}
+		toString += "Hausmittel: \n";
 		for(HouseholdRemedy h:households) {
 			toString += h.toString() + "\n";
 		}

@@ -32,8 +32,8 @@ public class CancelandStopIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
         return input.getResponseBuilder()
-                .withSpeech(SpeechStrings.stopMessage)
-                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.stopMessage)
+                .withSpeech(SpeechStrings.STOP_MESSAGE)
+                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, SpeechStrings.STOP_MESSAGE)
                 .build();
     }
 }

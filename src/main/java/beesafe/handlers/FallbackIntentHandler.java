@@ -25,7 +25,7 @@ public class FallbackIntentHandler implements RequestHandler {
         String speechText = "Tut mir leid, das weiss ich nicht. Sage einfach Hilfe.";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard(SpeechStrings.BeeSafeName, speechText)
+                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, speechText)
                 .withReprompt(speechText)
                 .build();
     }

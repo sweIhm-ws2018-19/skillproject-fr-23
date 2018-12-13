@@ -22,7 +22,7 @@ public class Risk {
 	}
 	
 	public String toString() {
-		String toString = String.format("Name: %s\n\nAufgetreten: %s", name, isOccured);
+		String toString = String.format("Name: %s\nAufgetreten: %s", name, isOccured);
 		return toString;
 	}
 }

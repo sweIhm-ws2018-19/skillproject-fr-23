@@ -23,6 +23,7 @@ import com.amazon.ask.model.LaunchRequest;
 import com.amazon.ask.model.Response;
 
 import main.java.beesafe.SpeechStrings;
+import main.java.beesafe.model.Conversation;
 
 public class LaunchRequestHandler implements RequestHandler {
     @Override
@@ -32,10 +33,19 @@ public class LaunchRequestHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) { 
-        return input.getResponseBuilder()
-                .withSimpleCard(SpeechStrings.BeeSafeName, SpeechStrings.welcomeMessage)
-                .withSpeech(SpeechStrings.welcomeMessage)
-                .withReprompt(SpeechStrings.welcomeMessage_Reprompt)
-                .build();
+    	Conversation.reset();
+    	if(Conversation.getLastInjury() == null) {
+	        return input.getResponseBuilder()
+	                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, SpeechStrings.WELCOME_MESSAGE)
+	                .withSpeech(SpeechStrings.WELCOME_MESSAGE)
+	                .withReprompt(SpeechStrings.WELCOME_MESSAGE_REPROMT)
+	                .build();
+    	} else {
+    		return input.getResponseBuilder()
+	                .withSimpleCard(SpeechStrings.BEE_SAFE_NAME, SpeechStrings.WELCOME_WITH_LAST_INJURY)
+	                .withSpeech(SpeechStrings.WELCOME_WITH_LAST_INJURY)
+	                .withReprompt(SpeechStrings.WELCOME_WITH_LAST_INJURY_REPROMT)
+	                .build();
+    	}
     }
 }
