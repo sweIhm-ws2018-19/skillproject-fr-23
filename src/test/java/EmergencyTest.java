@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import main.java.beesafe.model.Emergency;
 
-public class EmergencyAlternativeTest {
+public class EmergencyTest {
 
 	@Test
 	public void testGetAddress() {

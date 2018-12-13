@@ -12,7 +12,7 @@ import main.java.beesafe.model.HouseholdRemedy;
 import main.java.beesafe.model.Injury;
 import main.java.beesafe.model.Risk;
 
-public class InjuryAlternativeTest {
+public class InjuryTest {
 
 	@Test
 	public void test() {

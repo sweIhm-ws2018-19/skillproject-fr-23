@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import main.java.beesafe.model.Conversation;
 
-public class ConversationAlternativeTest {
+public class ConversationTest {
 		
 	@Test
 	public void testStichYes() {
@@ -16,9 +16,9 @@ public class ConversationAlternativeTest {
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjury());
 		assertEquals("Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjuryReprompt());
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ", Conversation.getNextAnswer(true));
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ", Conversation.getNextAnswer(true));
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegen Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzündungshemmend und kühlt die Stelle. Versuche trotzdem die Stelle weiterhin zu kühlen. Vermeide es die Stelle zu kratzen.", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht.", Conversation.getNextAnswer(true));
 		assertEquals("Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle.", Conversation.getNextAnswer(true));
@@ -50,8 +50,8 @@ public class ConversationAlternativeTest {
 		assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?", Conversation.getAnswerToInjury());
 		assertEquals("Siehst du Blasen an deinem Sonnenbrand?", Conversation.getAnswerToInjuryReprompt());
-		assertEquals("Dann solltest du auf jeden Fall zu einem Arzt gehen. Hier sind die Notaufnahmen: ", Conversation.getNextAnswer(true));
-		assertEquals("Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Hier sind die nächsten Notaufnahmen:", Conversation.getNextAnswer(true));
+		assertEquals("Dann solltest du auf jeden Fall zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut! Trage es einfach großzügig auf den Sonnenbrand auf.", Conversation.getNextAnswer(true));
 		assertEquals("Super, streich das Produkt einfach auf ein Baumwolltuch und lege auf die verbrannte Stelle. Bevor es wieder warm wird, solltest du es aber wegnehmen.", Conversation.getNextAnswer(true));
 		assertEquals("Sehr gut, bereite den Tee zu und lege die gebrauchten Teebeutel in den Kühlschrank. Sobald sie kalt sind, kannst du sie auf deine verbrannte Haut legen.", Conversation.getNextAnswer(true));
@@ -104,7 +104,7 @@ public class ConversationAlternativeTest {
 	public void testEmergencyLastInjury() {
 		Conversation.reset(); 
 		assertEquals("Ohje, dann solltest du vielleicht zu einem Arzt gehen. Möchtest du wissen, wo die nächste Notaufnahme ist?", Conversation.getNextAnswer(false));
-		assertEquals("Hier sind die Notaufnahmen:", Conversation.getNextAnswer(true));
+		assertEquals("Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
 	}	
 	
 	@Test
