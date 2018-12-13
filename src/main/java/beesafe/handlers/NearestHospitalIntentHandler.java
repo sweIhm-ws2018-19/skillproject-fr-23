@@ -15,7 +15,7 @@ import com.amazon.ask.model.Slot;
 
 import main.java.beesafe.model.HospitalFinder;
 
-public class NearestHospitalIntent implements RequestHandler{
+public class NearestHospitalIntentHandler implements RequestHandler{
 	public static final String ADDRESS_SLOT = "address";
 	public static final String ADDRESS_KEY = "ADDRESS";
 
