@@ -8,6 +8,10 @@ public class Conversation {
 	private static Injury lastInjury = new Injury(SONNENBRAND);
 	private static boolean nowConversation = (lastInjury == null);
 	
+	private Conversation() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	private static final String[] answersToYes_stich = new String[] {
 			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
 			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
@@ -79,7 +83,7 @@ public class Conversation {
 		}
 	}
 	
-	public static String getAnswerToInjury_Reprompt() { 
+	public static String getAnswerToInjuryReprompt() { 
 		if (injury != null) { 
 			if (injury.getInjury().equals(STICH)) {
         		return "Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?";
@@ -109,25 +113,7 @@ public class Conversation {
 	private static String nextAnswer(boolean answerIsYes) {
 		if (index < 6) { 
 			if (injury != null) { 
-				if (injury.getInjury().equals(STICH)) { 
-					if (answerIsYes) { 
-						return answersToYes_stich[index];
-					}
-					else { 
-						return answersToNo_stich[index];
-					}
-				}
-				else if (injury.getInjury().equals(SONNENBRAND)) { 
-					if (answerIsYes) { 
-						return answersToYes_sonnenbrand[index];
-					}
-					else { 
-						return answersToNo_sonnenbrand[index];
-					}
-				} 
-				else { 
-					return "Oh! da kenne ich mich leider nicht aus."; 
-				}
+				return answer(answerIsYes);
 			} 
 			else { 
 				return "Leider hast du die Art deiner Verletzung noch nicht angegeben. Mach das bitte zuerst, dann kann ich dir mit der Anwendung von Hausmitteln weiterhelfen"; 
@@ -135,6 +121,28 @@ public class Conversation {
 		}
 		else { 
 			return getGoodByeMessage(); 
+		}
+	}
+	
+	private static String answer(boolean answerIsYes) {
+		if (injury.getInjury().equals(STICH)) { 
+			if (answerIsYes) { 
+				return answersToYes_stich[index];
+			}
+			else { 
+				return answersToNo_stich[index];
+			}
+		}
+		else if (injury.getInjury().equals(SONNENBRAND)) { 
+			if (answerIsYes) { 
+				return answersToYes_sonnenbrand[index];
+			}
+			else { 
+				return answersToNo_sonnenbrand[index];
+			}
+		} 
+		else { 
+			return "Oh! da kenne ich mich leider nicht aus."; 
 		}
 	}
 	
