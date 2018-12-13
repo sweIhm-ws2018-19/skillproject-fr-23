@@ -7,6 +7,8 @@ import java.net.URLEncoder;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import org.apache.http.HttpException;
+
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.*;
@@ -56,6 +58,7 @@ public class HospitalFinder {
             }
 
         } catch (Exception ex) {
+        	coord = "";
         }
         return coord;
     }
@@ -89,6 +92,8 @@ public class HospitalFinder {
                 String address = obj.getString("vicinity", "adress");
                 hospitalContact[1] = address.split("<br/>")[0];
                 hospitalContact[2] = address.split("<br/>")[1];
+            } else {
+            	throw new HttpException("Response code: " + responseCode);
             }
 
         } catch (Exception ex) {         
