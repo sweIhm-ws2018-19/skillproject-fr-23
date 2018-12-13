@@ -1,4 +1,4 @@
-package main.java.beesafe.model;
+﻿package main.java.beesafe.model;
 
 import java.util.List; 
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ public class Conversation {
 	private static int index = -1; 
 	private static Injury injury = null; 
 	private static Injury lastInjury = new Injury("sonnenbrand");
-	private static boolean nowConversation = lastInjury.getInjury().equals(null);
+	private static boolean nowConversation = (lastInjury == null);
 	
 	private static final String[] answersToYes_stich = new String[] {
 			"Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Hier sind die nächsten Notaufnahmen: ", 
@@ -52,15 +52,21 @@ public class Conversation {
 			"Alles klar, wie kann ich dir sonst helfen?"
 	};
 	
+	public static void reset() { 
+		index = -1;
+		nowConversation = (lastInjury == null);
+	}
+	
 	public static void setInjury(String injuryString) { 
 		injury = new Injury(injuryString); 
 	}
 	
-	public static String getAnswerToInjury() { 
+	public static String getAnswerToInjury() {
+		index = -1;  
 		if (injury != null) { 
 			if (injury.getInjury().equals("stich")) {
         		return "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?";
-            }
+            	}
         	else if (injury.getInjury().equals("sonnenbrand")) { 
         		return "Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?";
         	}
@@ -77,7 +83,7 @@ public class Conversation {
 		if (injury != null) { 
 			if (injury.getInjury().equals("stich")) {
         		return "Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?";
-            }
+            	}
         	else if (injury.getInjury().equals("sonnenbrand")) { 
         		return "Siehst du Blasen an deinem Sonnenbrand?";
         	}
@@ -111,7 +117,7 @@ public class Conversation {
 						return answersToNo_stich[index];
 					}
 				}
-				else if (injury.getInjury().equals("stich")) { 
+				else if (injury.getInjury().equals("sonnenbrand")) { 
 					if (answerIsYes) { 
 						return answersToYes_sonnenbrand[index];
 					}

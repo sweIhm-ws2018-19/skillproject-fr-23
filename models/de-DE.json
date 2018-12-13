@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "wespenstich",
+            "invocationName": "bee safe",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -87,6 +87,7 @@
                         "ich habe beides",
                         "ich habe {Treatment} zur Hand",
                         "ich habe {Treatment} zuhause",
+                        "{Treatment}",
                         "hab beides hier",
                         "selbstverständlich",
                         "logo",
