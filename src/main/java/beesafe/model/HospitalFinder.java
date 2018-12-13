@@ -19,7 +19,7 @@ import com.eclipsesource.json.*;
  *
  */
 public class HospitalFinder {
-	
+	private static final String ENCODING = "UTF-8";
     private String id;
     private String app_code;
     
@@ -36,7 +36,7 @@ public class HospitalFinder {
     private String getGeoCoordinates(String location) {
     	String coord = "";
         try {
-            location = URLEncoder.encode(location, "UTF-8");
+            location = URLEncoder.encode(location, ENCODING);
             HttpsURLConnection connection = (HttpsURLConnection) new URL("https://geocoder.api.here.com/6.2/geocode.json"
                     + "?app_id=" + id
                     + "&app_code=" + app_code
@@ -74,7 +74,7 @@ public class HospitalFinder {
     private String[] getNextHospital(String coord) {  	
     	String[] hospitalContact = new String[3];
     	try {
-            coord = URLEncoder.encode(coord, "UTF-8");
+            coord = URLEncoder.encode(coord, ENCODING);
             HttpsURLConnection connection = (HttpsURLConnection) new URL("https://places.cit.api.here.com/places/v1/discover/search"
                     + "?app_id=" + id
                     + "&app_code=" + app_code
