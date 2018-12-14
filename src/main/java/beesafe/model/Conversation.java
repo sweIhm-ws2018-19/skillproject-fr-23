@@ -127,25 +127,26 @@ public class Conversation {
 	
 	private static String answer(boolean answerIsYes) {
 		if (injury.getInjury().equals(STICH)) { 
-			if (answerIsYes) { 
+			if (answerIsYes) {
 				return answersToYes_stich[index];
 			}
-			else { 
+			else {
 				return answersToNo_stich[index];
 			}
 		}
 		else if (injury.getInjury().equals(SONNENBRAND)) { 
-			if (answerIsYes) { 
+			if (answerIsYes) {
 				return answersToYes_sonnenbrand[index];
 			}
-			else { 
+			else {
 				return answersToNo_sonnenbrand[index];
 			}
 		} 
-		else { 
+		else {
 			return "Oh! da kenne ich mich leider nicht aus."; 
 		}
 	}
+
 	
 	public static String nextLastInjuryAnswer(boolean answerIsYes) {
 		String answer;
@@ -187,5 +188,13 @@ public class Conversation {
 	
 	public static String getLastInjury() {
 		return lastInjury.getInjury();
+	}
+
+	//Beide werden fuers Testen gebraucht
+	public static void setIndex(int i){
+		index = i;
+	}
+	public static void setNowConversation (boolean bool){
+		nowConversation = bool;
 	}
 }
