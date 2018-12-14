@@ -16,8 +16,10 @@ package main.java.beesafe.handlers;
 import static com.amazon.ask.request.Predicates.intentName;
 
 import java.util.Map;
+import java.util.Collections;
 import java.util.Optional;
 
+import com.amazon.ask.attributes.AttributesManager;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Intent;
@@ -46,9 +48,19 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         Map<String, Slot> slots = intent.getSlots();
 
         // Get the injury slot from the list of slots.
-        Slot injurySlot = slots.get(INJURY_SLOT);      
-        Conversation.setInjury(injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName());
-         
+        Slot injurySlot = slots.get(INJURY_SLOT);   
+        String injury = injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName();
+        Conversation.setInjury(injury);
+        
+        input.getAttributesManager().setSessionAttributes(Collections.singletonMap("LAST_INJURY", injury));
+
+        //store persistent
+        AttributesManager attributesManager = input.getAttributesManager();
+        Map<String, Object> persistentAttributes = attributesManager.getPersistentAttributes();
+        persistentAttributes.put("LAST_INJURY", injurySlot.getValue());
+        attributesManager.setPersistentAttributes(persistentAttributes);
+        attributesManager.savePersistentAttributes();
+        
         String speechText = Conversation.getAnswerToInjury();
 
         ResponseBuilder responseBuilder = input.getResponseBuilder();

@@ -10,9 +10,7 @@ main\java\beesafe\handlers\SessionEndedRequestHandler.class
 main\java\beesafe\handlers\CancelandStopIntentHandler.class
 main\java\beesafe\model\Risk.class
 main\java\beesafe\handlers\HelpIntentHandler.class
-main\java\beesafe\handlers\MyInjuryIsIntentHandler.class
 main\java\beesafe\model\HospitalFinder.class
 main\java\beesafe\handlers\NoIntentHandler.class
 main\java\beesafe\model\HouseholdRemedy.class
 main\java\beesafe\SpeechStrings.class
-main\java\beesafe\handlers\NearestHospitalIntent.class

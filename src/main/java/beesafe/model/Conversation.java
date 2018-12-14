@@ -5,8 +5,8 @@ public class Conversation {
 	private static Injury injury = null; 
 	private static final String SONNENBRAND = "sonnenbrand";
 	private static final String STICH = "stich";
-	private static Injury lastInjury = new Injury(SONNENBRAND);
-	private static boolean nowConversation = (lastInjury == null);
+	private static Injury lastInjury = null;
+	private static boolean nowConversation = (lastInjury != null);
 	private static final String HOSPITAL = "Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ";
 	
 	private Conversation() {
