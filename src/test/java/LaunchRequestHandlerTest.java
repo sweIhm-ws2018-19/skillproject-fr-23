@@ -1,4 +1,4 @@
-package beesafe.handlers;
+package test.java;
 
 import main.java.beesafe.handlers.LaunchRequestHandler;
 import main.java.beesafe.SpeechStrings;

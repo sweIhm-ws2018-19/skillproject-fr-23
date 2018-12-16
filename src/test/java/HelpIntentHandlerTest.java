@@ -1,11 +1,12 @@
-package beesafe.handlers;
+package test.java;
+
+import java.util.Optional;
+import main.java.beesafe.handlers.HelpIntentHandler;
+import main.java.beesafe.SpeechStrings;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.response.ResponseBuilder;
-
-import main.java.beesafe.handlers.GoodByeIntentHandler;
-import main.java.beesafe.model.Conversation;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,15 +16,13 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
-import java.util.Optional;
+public class HelpIntentHandlerTest {
 
-public class GoodByeIntentHandlerTest {
-
-    private GoodByeIntentHandler handler;
+    private HelpIntentHandler handler;
 
     @Before
     public void setup() {
-        handler = new GoodByeIntentHandler();
+        handler = new HelpIntentHandler();
     }
 
     @Test
@@ -33,7 +32,7 @@ public class GoodByeIntentHandlerTest {
         assertTrue(handler.canHandle(inputMock));
     }
 
-    //TODO Weiß er die Injury während des Testen?
+    //TODO speechText ist lokal in FallbackIntentHandler gespeichert, nicht in Speechstrings
     @Test
     public void testHandle() {
         final HandlerInput input = Mockito.mock(HandlerInput.class);
@@ -42,7 +41,7 @@ public class GoodByeIntentHandlerTest {
         assertTrue(response.isPresent());
         final Response res = response.get();
 
-        assertTrue(res.getOutputSpeech().toString().contains(Conversation.getGoodByeMessage()));
+        assertTrue(res.getOutputSpeech().toString().contains(SpeechStrings.HELP_MESSAGE));
     }
 
 }

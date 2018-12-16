@@ -1,4 +1,4 @@
-package beesafe.handlers;
+package test.java;
 
 import com.amazon.ask.model.Response;
 import com.amazon.ask.response.ResponseBuilder;

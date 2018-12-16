@@ -1,12 +1,11 @@
-package beesafe.handlers;
+package test.java;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.response.ResponseBuilder;
 
-
-import main.java.beesafe.handlers.CancelandStopIntentHandler;
-import main.java.beesafe.SpeechStrings;
+import main.java.beesafe.handlers.GoodByeIntentHandler;
+import main.java.beesafe.model.Conversation;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,13 +17,13 @@ import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
-public class CancelandStopIntentHandlerTest {
+public class GoodByeIntentHandlerTest {
 
-    private CancelandStopIntentHandler handler;
+    private GoodByeIntentHandler handler;
 
     @Before
     public void setup() {
-        handler = new CancelandStopIntentHandler();
+        handler = new GoodByeIntentHandler();
     }
 
     @Test
@@ -34,6 +33,7 @@ public class CancelandStopIntentHandlerTest {
         assertTrue(handler.canHandle(inputMock));
     }
 
+    //TODO Weiß er die Injury während des Testen?
     @Test
     public void testHandle() {
         final HandlerInput input = Mockito.mock(HandlerInput.class);
@@ -42,7 +42,7 @@ public class CancelandStopIntentHandlerTest {
         assertTrue(response.isPresent());
         final Response res = response.get();
 
-        assertTrue(res.getOutputSpeech().toString().contains(SpeechStrings.STOP_MESSAGE));
+        assertTrue(res.getOutputSpeech().toString().contains(Conversation.getGoodByeMessage()));
     }
 
 }

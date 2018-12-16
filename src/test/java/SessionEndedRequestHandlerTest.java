@@ -1,8 +1,7 @@
-package beesafe.handlers;
+package test.java;
 
 import java.util.Optional;
-import main.java.beesafe.handlers.HelpIntentHandler;
-import main.java.beesafe.SpeechStrings;
+import main.java.beesafe.handlers.SessionEndedRequestHandler;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.model.Response;
@@ -16,13 +15,13 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
-public class HelpIntentHandlerTest {
+public class SessionEndedRequestHandlerTest {
 
-    private HelpIntentHandler handler;
+    private SessionEndedRequestHandler handler;
 
     @Before
     public void setup() {
-        handler = new HelpIntentHandler();
+        handler = new SessionEndedRequestHandler();
     }
 
     @Test
@@ -32,7 +31,6 @@ public class HelpIntentHandlerTest {
         assertTrue(handler.canHandle(inputMock));
     }
 
-    //TODO speechText ist lokal in FallbackIntentHandler gespeichert, nicht in Speechstrings
     @Test
     public void testHandle() {
         final HandlerInput input = Mockito.mock(HandlerInput.class);
@@ -41,7 +39,7 @@ public class HelpIntentHandlerTest {
         assertTrue(response.isPresent());
         final Response res = response.get();
 
-        assertTrue(res.getOutputSpeech().toString().contains(SpeechStrings.HELP_MESSAGE));
+        assertTrue(res.getOutputSpeech() == null);
     }
 
 }

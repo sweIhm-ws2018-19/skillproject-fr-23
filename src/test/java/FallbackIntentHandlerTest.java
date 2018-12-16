@@ -1,4 +1,4 @@
-package beesafe.handlers;
+package test.java;
 
 import java.util.Optional;
 
