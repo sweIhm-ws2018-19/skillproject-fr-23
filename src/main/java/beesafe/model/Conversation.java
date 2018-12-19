@@ -128,7 +128,9 @@ public class Conversation {
 	private static String answer(boolean answerIsYes) {
 		if (injury.getInjury().equals(STICH)) { 
 			if (answerIsYes) {
-				return answersToYes_stich[index];
+				String answer = answersToYes_stich[index];
+				index = 6;
+				return answer;
 			}
 			else {
 				return answersToNo_stich[index];
@@ -136,7 +138,9 @@ public class Conversation {
 		}
 		else if (injury.getInjury().equals(SONNENBRAND)) { 
 			if (answerIsYes) {
-				return answersToYes_sonnenbrand[index];
+				String answer = answersToYes_sonnenbrand[index];
+				index = 6; 
+				return answer;
 			}
 			else {
 				return answersToNo_sonnenbrand[index];

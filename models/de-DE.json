@@ -69,6 +69,22 @@
                     "samples": []
                 },
                 {
+                    "name": "NearestHospitalIntent",
+                    "slots": [
+                        {
+                            "name": "address",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "mein wohnort lautet {address}",
+                        "adresse {address}",
+                        "ich bin an {address}",
+                        "ich wohne in {address} ",
+                        "meine adresse ist {address}"
+                    ]
+                },
+                {
                     "name": "YesIntent",
                     "slots": [
                         {
@@ -81,6 +97,8 @@
                         }
                     ],
                     "samples": [
+                        "ja danke",
+                        "ja bitte",
                         "ich habe {Treatment} vorrätig",
                         "hab {Treatment} da",
                         "ich habe {Treatment} daheim",

@@ -16,12 +16,11 @@ public class ConversationTest {
 		//assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjury());
 		assertEquals("Hast du den Stachel schon rausgezogen? <break time=\"0.1s\"/> Hast du schon mal allergisch auf Stiche reagiert?", Conversation.getAnswerToInjuryReprompt());
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
-		assertEquals("Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Wo wurdest du gestochen?", Conversation.getNextAnswer(false));
+		assertEquals("OK das hört sich nicht so schlimm an! Ist es denn stark geschwollen oder hast du Atemnot?", Conversation.getNextAnswer(false));
+		assertEquals("Perfekt! Dann ist es nicht schlimm bleib ruhig und befolge Omas Rat. Hast du Venestil zu Hause?", Conversation.getNextAnswer(false));
 		assertEquals("Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzündungshemmend und kühlt die Stelle. Versuche trotzdem die Stelle weiterhin zu kühlen. Vermeide es die Stelle zu kratzen.", Conversation.getNextAnswer(true));
-		assertEquals("Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht.", Conversation.getNextAnswer(true));
-		assertEquals("Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle.", Conversation.getNextAnswer(true));
+		assertEquals("Und du weißt, Oma ist immer für dich da. Es kann passieren, dass sich der Stich infiziert dann solltest du nochmal zum Onkel Doktor schauen. Aber das passiert meistens nicht - du weißt doch, Oma ist immer übervorsichtig.", Conversation.getNextAnswer(true));
 		assertEquals("Und du weißt, Oma ist immer für dich da. Es kann passieren, dass sich der Stich infiziert dann solltest du nochmal zum Onkel Doktor schauen. Aber das passiert meistens nicht - du weißt doch, Oma ist immer übervorsichtig.", Conversation.getGoodByeMessage());
 	}
 	
@@ -50,12 +49,10 @@ public class ConversationTest {
 		//assertEquals("Super, wie kann ich dir sonst helfen?", Conversation.getNextAnswer(true));
 		assertEquals("Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?", Conversation.getAnswerToInjury());
 		assertEquals("Siehst du Blasen an deinem Sonnenbrand?", Conversation.getAnswerToInjuryReprompt());
-		assertEquals("Dann solltest du auf jeden Fall zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
-		assertEquals("Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", Conversation.getNextAnswer(true));
+		assertEquals("Gut, hast du Kreislaufprobleme oder Fieber?", Conversation.getNextAnswer(false));
+		assertEquals("Sehr schön, dann lass mich mal in meinem schlauen Büchlein nachsehen. <audio src='soundbank://soundlibrary/human/amzn_sfx_walking_on_grass_02'/> Hast du Aloe Vera oder Feuchtigkeitscreme zur Hand?", Conversation.getNextAnswer(false));
 		assertEquals("Sehr gut! Trage es einfach großzügig auf den Sonnenbrand auf.", Conversation.getNextAnswer(true));
-		assertEquals("Super, streich das Produkt einfach auf ein Baumwolltuch und lege auf die verbrannte Stelle. Bevor es wieder warm wird, solltest du es aber wegnehmen.", Conversation.getNextAnswer(true));
-		assertEquals("Sehr gut, bereite den Tee zu und lege die gebrauchten Teebeutel in den Kühlschrank. Sobald sie kalt sind, kannst du sie auf deine verbrannte Haut legen.", Conversation.getNextAnswer(true));
-		assertEquals("Super, schneide die Gurke in Scheiben und lege diese dann auf den Sonnenbrand.", Conversation.getNextAnswer(true));
+		assertEquals("Vergiss nicht viel zu trinken! Und du weißt, Oma ist immer für dich da. Falls doch noch Blasen entstehen, solltest du auf jeden Fall zu einem Arzt gehen. Das passiert aber selten - du weißt doch, Oma ist immer übervorsichtig.", Conversation.getNextAnswer(true));
 		assertEquals("Vergiss nicht viel zu trinken! Und du weißt, Oma ist immer für dich da. Falls doch noch Blasen entstehen, solltest du auf jeden Fall zu einem Arzt gehen. Das passiert aber selten - du weißt doch, Oma ist immer übervorsichtig.", Conversation.getGoodByeMessage());
 	}
 	
