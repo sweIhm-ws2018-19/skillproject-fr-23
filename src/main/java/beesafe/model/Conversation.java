@@ -1,6 +1,10 @@
 package main.java.beesafe.model;
 
+import main.java.beesafe.handlers.YesIntentHandler;
+
 public class Conversation {
+	private static boolean remedyFirstTime = true;
+	private static boolean doNotRepeat = true;
 	private static int index = -1; 
 	private static Injury injury = null; 
 	private static final String SONNENBRAND = "sonnenbrand";
@@ -8,6 +12,7 @@ public class Conversation {
 	private static Injury lastInjury = null;
 	private static boolean nowConversation = (lastInjury != null);
 	private static final String HOSPITAL = "Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Oma kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist: ";
+	private static final String UNDERSTOOD = "Hast du das Verstanden?";
 	
 	private Conversation() {
 	    throw new IllegalStateException("Utility class");
@@ -17,9 +22,9 @@ public class Conversation {
 			HOSPITAL,
 			HOSPITAL,
 			HOSPITAL,
-			"Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzündungshemmend und kühlt die Stelle. Versuche trotzdem die Stelle weiterhin zu kühlen. Vermeide es die Stelle zu kratzen.", 
-			"Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht.", 
-			"Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle."
+			"Sehr gut! Trage etwas von der Salbe auf. Sie wirkt entzündungshemmend und kühlt die Stelle. Versuche trotzdem die Stelle weiterhin zu kühlen. Vermeide es die Stelle zu kratzen. " + UNDERSTOOD, 
+			"Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht. " + UNDERSTOOD, 
+			"Super! Backpulver hilft auch gut - vermische es mit ein bisschen Wasser zu einer Paste und trage es auf den Stich auf. Sollte es dir gut tun kannst du es auch nochmal später wiederholen. Vergiss nicht weiterhin die Wunde zu kühlen und kratze nicht an der Einstichstelle. " + UNDERSTOOD
 	}; 
 	private static final String[] answersToNo_stich = new String[]{
 			"Wo wurdest du gestochen?",
@@ -31,11 +36,11 @@ public class Conversation {
     };
 	private static final String[] answersToYes_sonnenbrand = new String[] {
 			"Dann solltest du auf jeden Fall zu einem Arzt gehen. Oma kann dir sagen wo die nächste Notaufnahme ist, aber ich kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist: ", 
-			"Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", 
-			"Sehr gut! Trage es einfach großzügig auf den Sonnenbrand auf.", 
-			"Super, streich das Produkt einfach auf ein Baumwolltuch und lege auf die verbrannte Stelle. Bevor es wieder warm wird, solltest du es aber wegnehmen.", 
-			"Sehr gut, bereite den Tee zu und lege die gebrauchten Teebeutel in den Kühlschrank. Sobald sie kalt sind, kannst du sie auf deine verbrannte Haut legen.", 
-			"Super, schneide die Gurke in Scheiben und lege diese dann auf den Sonnenbrand."
+			"Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Oma kann dir sagen wo die nächste Notaufnahme ist, aber ich kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist:  ", 
+			"Sehr gut! Trage es einfach großzügig auf den Sonnenbrand auf. " + UNDERSTOOD, 
+			"Super, streich das Produkt einfach auf ein Baumwolltuch und lege auf die verbrannte Stelle. Bevor es wieder warm wird, solltest du es aber wegnehmen. " + UNDERSTOOD, 
+			"Sehr gut, bereite den Tee zu und lege die gebrauchten Teebeutel in den Kühlschrank. Sobald sie kalt sind, kannst du sie auf deine verbrannte Haut legen." + UNDERSTOOD, 
+			"Super, schneide die Gurke in Scheiben und lege diese dann auf den Sonnenbrand. " + UNDERSTOOD
 	}; 
 	private static final String[] answersToNo_sonnenbrand = new String[]{
 			"Gut, hast du Kreislaufprobleme oder Fieber?", 
@@ -45,17 +50,7 @@ public class Conversation {
 			"Das ist nicht schlimm, hast du eine Gurke daheim?", 
 			"Schade, aber eine kalte Dusche wird deiner Haut auch guttun."
     };
-	
-	private static final String[] answersToYes_lastInjury = new String[] {
-			"Super, wie kann ich dir sonst helfen?",
-			"Oma kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\\\"1s\\\"/>Meine Adresse ist"
-	};
-	
-	private static final String[] answersToNo_lastInjury = new String[] {
-			"Ohje, dann solltest du vielleicht zu einem Arzt gehen. Möchtest du wissen, wo die nächste Notaufnahme ist?",
-			"Alles klar, wie kann ich dir sonst helfen?"
-	};
-	
+		
 	public static void reset() { 
 		injury = null;
 		index = -1;
@@ -76,7 +71,7 @@ public class Conversation {
         		return "Oh je, <break time=\"0.1s\"/> bei starkem Sonnenbrand können Blasen entstehen. Siehst du welche?";
         	}
         	else {
-        		return "Oh! Da kenne ich mich leider nicht aus. Hier sind drei Notaufnahmen in deiner Naehe: ";
+        		return "Oh! Da kenne ich mich leider nicht aus. Oma kann dir sagen wo die nächste Notaufnahme ist, aber ich kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist: ";
         	}
 		}
 		else {
@@ -93,27 +88,18 @@ public class Conversation {
         		return "Siehst du Blasen an deinem Sonnenbrand?";
         	}
         	else {
-        		return "Da kann ich dir leider nicht helfen. Geh doch zur naechsten Notaufnahme. ";
+        		return "Da kann ich dir leider nicht helfen. Oma kann dir sagen wo die nächste Notaufnahme ist, aber ich kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist: ";
         	}
 		}
 		else {
 			return "Bitte sag mir zuerst, was deine Verletzung ist."; 
 		}
 	}
-	
-	public static String getNextAnswer(boolean answerIsYes) { 
-		if (nowConversation) {
-			index += 1;
-			return nextAnswer(answerIsYes);
-		} else {
-			index += 1;
-			return nextLastInjuryAnswer(answerIsYes);
-		}			
-	}
-	
-	private static String nextAnswer(boolean answerIsYes) {
+		
+	public static String getNextAnswer(boolean answerIsYes) {
 		if (index < 6) { 
-			if (injury != null) { 
+			if (injury != null) {
+				index += 1;
 				return answer(answerIsYes);
 			} 
 			else { 
@@ -129,44 +115,53 @@ public class Conversation {
 		if (injury.getInjury().equals(STICH)) { 
 			if (answerIsYes) {
 				String answer = answersToYes_stich[index];
-				index = 6;
+				if(!remedyFirstTime) {
+					answer = getGoodByeMessage();
+					YesIntentHandler.setEndSession(true);
+					index = 6;
+				}
+				if(index > 2 && remedyFirstTime) {
+					remedyFirstTime = false;
+					doNotRepeat = false;
+				}				
 				return answer;
 			}
 			else {
-				return answersToNo_stich[index];
+				if(doNotRepeat) {
+					return answersToNo_stich[index];
+				} else {
+					index -= 1;
+					return answersToYes_stich[index];
+				}			
 			}
 		}
 		else if (injury.getInjury().equals(SONNENBRAND)) { 
 			if (answerIsYes) {
 				String answer = answersToYes_sonnenbrand[index];
-				index = 6; 
+				if(!remedyFirstTime) {
+					answer = getGoodByeMessage();
+					YesIntentHandler.setEndSession(true);
+					index = 6;
+				}
+				if(index > 1 && remedyFirstTime) {
+					remedyFirstTime = false;
+					doNotRepeat = false;
+				}				
 				return answer;
 			}
 			else {
-				return answersToNo_sonnenbrand[index];
+				if(doNotRepeat) {
+					return answersToNo_sonnenbrand[index];
+				} else {
+					index -= 1;
+					return answersToYes_sonnenbrand[index];
+				}
+				
 			}
 		} 
 		else {
 			return "Oh! da kenne ich mich leider nicht aus."; 
 		}
-	}
-
-	
-	public static String nextLastInjuryAnswer(boolean answerIsYes) {
-		String answer;
-		if (answerIsYes) { 
-			nowConversation = true;
-			answer = answersToYes_lastInjury[index];
-			index = -1;
-		}
-		else { 
-			answer = answersToNo_lastInjury[index];
-			if (index == 1) {
-				nowConversation = true;
-				index = -1;
-			}
-		}
-		return answer;
 	}
 		
 	public static String getGoodByeMessage() { 

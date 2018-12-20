@@ -53,7 +53,7 @@ public class NoIntentHandlerTest {
             assertTrue(res.getOutputSpeech().toString().contains(expectedString));
         }
 
-        for(int i = -1;i < 7; i++ ){
+        for(int i = -1;i < 5; i++ ){
             Conversation.setIndex(i);
             Conversation.setNowConversation(true);
             Optional<Response> response = handler.handle(input);

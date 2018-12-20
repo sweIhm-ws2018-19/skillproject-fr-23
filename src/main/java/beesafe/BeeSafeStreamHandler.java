@@ -44,8 +44,6 @@ public class BeeSafeStreamHandler extends SkillStreamHandler {
                 		new YesIntentHandler(),
                 		new NoIntentHandler(),
                 		new NearestHospitalIntentHandler())
-                .withTableName("lastInjuryData")
-                .withAutoCreateTable(true)
                 // Add your skill id below
                 //.withSkillId("")
                 .build();

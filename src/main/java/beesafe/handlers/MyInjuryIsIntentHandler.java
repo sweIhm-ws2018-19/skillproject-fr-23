@@ -52,21 +52,12 @@ public class MyInjuryIsIntentHandler implements RequestHandler {
         String injury = injurySlot.getResolutions().getResolutionsPerAuthority().get(0).getValues().get(0).getValue().getName();
         Conversation.setInjury(injury);
         
-        input.getAttributesManager().setSessionAttributes(Collections.singletonMap("LAST_INJURY", injury));
-
-        //store persistent
-        AttributesManager attributesManager = input.getAttributesManager();
-        Map<String, Object> persistentAttributes = attributesManager.getPersistentAttributes();
-        persistentAttributes.put("LAST_INJURY", injurySlot.getValue());
-        attributesManager.setPersistentAttributes(persistentAttributes);
-        attributesManager.savePersistentAttributes();
         
         String speechText = Conversation.getAnswerToInjury();
 
         ResponseBuilder responseBuilder = input.getResponseBuilder();
 
-        responseBuilder.withSimpleCard("ColorSession", speechText)
-                .withSpeech(speechText)
+        responseBuilder.withSpeech(speechText)
                 .withShouldEndSession(false);
 
 

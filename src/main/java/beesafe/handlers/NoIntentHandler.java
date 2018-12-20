@@ -25,6 +25,7 @@ import com.amazon.ask.response.ResponseBuilder;
 import main.java.beesafe.model.Conversation; 
 
 public class NoIntentHandler implements RequestHandler {
+	private static boolean endSession = false;
 	
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -37,10 +38,13 @@ public class NoIntentHandler implements RequestHandler {
     	String speechText = answer; 	    	
     	ResponseBuilder responseBuilder = input.getResponseBuilder();
 
-        responseBuilder.withSimpleCard("ColorSession", speechText)
-                .withSpeech(speechText)
-                .withShouldEndSession(false);
+        responseBuilder.withSpeech(speechText)
+                .withShouldEndSession(endSession);
 
         return responseBuilder.build();
+    }
+    
+    public static void setEndSession(boolean session) {
+    	endSession = session;
     }
 }

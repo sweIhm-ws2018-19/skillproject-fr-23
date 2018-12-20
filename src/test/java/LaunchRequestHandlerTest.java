@@ -35,6 +35,7 @@ public class LaunchRequestHandlerTest {
         assertTrue(handler.canHandle(inputMock));
     }
 
+    /*
     @Test
     public void testHandleNoPreviousInjury() {
 
@@ -53,8 +54,9 @@ public class LaunchRequestHandlerTest {
         final Response res = response.get();
 
         assertTrue(res.getOutputSpeech().toString().contains(SpeechStrings.WELCOME_MESSAGE));
-    }
+    }*/
 
+    /*
     @Test
     public void testHandleWithPreviousInjury() {
 
@@ -74,7 +76,7 @@ public class LaunchRequestHandlerTest {
         final Response res = response.get();
 
         assertTrue(res.getOutputSpeech().toString().contains(SpeechStrings.WELCOME_WITH_LAST_INJURY));
-    }
+    }*/
 
 
 }

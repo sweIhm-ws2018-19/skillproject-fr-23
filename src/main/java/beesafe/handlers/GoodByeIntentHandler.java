@@ -22,7 +22,6 @@ public class GoodByeIntentHandler implements RequestHandler{
 		String speechText = Conversation.getGoodByeMessage(); 
 		
 		return input.getResponseBuilder()
-				.withSimpleCard(SpeechStrings.BEE_SAFE_NAME, speechText)
 				.withSpeech(speechText)
 				.withShouldEndSession(true)
 				.build();
