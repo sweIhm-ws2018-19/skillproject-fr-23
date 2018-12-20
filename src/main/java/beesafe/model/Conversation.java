@@ -55,6 +55,8 @@ public class Conversation {
 		injury = null;
 		index = -1;
 		nowConversation = (lastInjury == null);
+		doNotRepeat = true;
+		remedyFirstTime = true;
 	}
 	
 	public static void setInjury(String injuryString) { 
