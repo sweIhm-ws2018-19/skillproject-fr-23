@@ -7,7 +7,7 @@ public class Conversation {
 	private static final String STICH = "stich";
 	private static Injury lastInjury = null;
 	private static boolean nowConversation = (lastInjury != null);
-	private static final String HOSPITAL = "Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ";
+	private static final String HOSPITAL = "Das hört sich nicht gut an! Es wäre besser wenn du in die nächste Notaufnahme gehst! Oma kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist: ";
 	
 	private Conversation() {
 	    throw new IllegalStateException("Utility class");
@@ -30,7 +30,7 @@ public class Conversation {
 			"Auch nicht so schlimm. Kühle den Stich einfach mit ein paar umwickelten Eiswürfeln oder einem kalten Handtuch. Pass aber auf, dass du nicht zu sehr kühlst, sonst kommt es zu Irritationen an der Haut. Lager die Stelle etwas hoch und versuche dich zu schonen. Wichtig ist auch, dass du nicht an der Stelle kratzt!"
     };
 	private static final String[] answersToYes_sonnenbrand = new String[] {
-			"Dann solltest du auf jeden Fall zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", 
+			"Dann solltest du auf jeden Fall zu einem Arzt gehen. Oma kann dir sagen wo die nächste Notaufnahme ist, aber ich kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\"1s\"/>Meine Adresse ist: ", 
 			"Oh je, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: ", 
 			"Sehr gut! Trage es einfach großzügig auf den Sonnenbrand auf.", 
 			"Super, streich das Produkt einfach auf ein Baumwolltuch und lege auf die verbrannte Stelle. Bevor es wieder warm wird, solltest du es aber wegnehmen.", 
@@ -48,7 +48,7 @@ public class Conversation {
 	
 	private static final String[] answersToYes_lastInjury = new String[] {
 			"Super, wie kann ich dir sonst helfen?",
-			"Wenn du mir deine Adresse gibst kann ich dir das nächstgelegene Krankenhaus sagen: "
+			"Oma kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich <break time =\\\"1s\\\"/>Meine Adresse ist"
 	};
 	
 	private static final String[] answersToNo_lastInjury = new String[] {
