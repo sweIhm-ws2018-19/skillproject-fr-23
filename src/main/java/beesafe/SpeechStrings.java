@@ -10,10 +10,7 @@ public class SpeechStrings {
 	public static final String WELCOME_MESSAGE = "Willkommen bei Ask Grandma! " 
 												+ "Hallo! Wie kann ich dir helfen?";
 	public static final String WELCOME_MESSAGE_REPROMT = "Hey ist da jemand <break time =\"1s\"/>? Deine Grossmutter hat gerade Zeit fuer dich.";
-	
-	public static final String WELCOME_WITH_LAST_INJURY = "Hallo! Geht es deinem " + Conversation.getLastInjury() + " wieder besser?";
-	public static final String WELCOME_WITH_LAST_INJURY_REPROMT = "Bitte sage mir, ob es dir nach deinem " + Conversation.getLastInjury() + "wieder gut geht?";
-	
+		
 	public static final String STOP_MESSAGE = "Ich hoffe ich konnte dir helfen. Bis zum naechsten mal!";
 	
 	public static final String BEE_SAFE_NAME = "bee safe";
