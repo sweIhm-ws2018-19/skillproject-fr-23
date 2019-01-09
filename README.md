@@ -16,6 +16,20 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 - große Zielgruppe
 - falsche Diagnose (Lösung: Weiterleitung an Arzt)
 
+## Badges
+
+travis-ci Build:
+
+"Link"
+
+Sonarqube Quality Gate:
+
+"Link"
+
+## Github Pages mit weiterführenden Informationen:
+
+"Link"
+
 ## Kommunikationsbeispiele:
 
 ### Verletzung mit Risiko
@@ -24,17 +38,21 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 <b>Alexa:</b> "Willkommen bei Ask Grandma! Hallo! Wie kann ich dir helfen?"
 
-<b>Nutzer:</b> "Ich habe einen Sonnenbrand"
+<b>Nutzer:</b> "Ich habe einen Bienenstich"
 
-<b>Alexa:</b> "Oh, Siehst du Blasen an deinem Sonnenbrand oder hast du Kreislaufprobleme oder Fieber? Wenn nicht, kannst du mich nach Heilmitteln fragen.
+<b>Alexa:</b> "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?"
 
-<b>Nutzer:</b> "Ich habe Fieber"
+<b>Nutzer:</b> "Ja"
 
-<b>Alexa:</b> "Oh nein, dann hast du möglicherweise einen Sonnenstich und solltest zu einem Arzt gehen. Hier sind die nächsten Notaufnahmen: ..."
+<b<Alexa:</b> "Das hört sich nicht gut an! Oma kann dir sagen wo die nächste Notaufnahme ist, aber ich kann nicht mehr so gut hören, daher sage mir bitte vor dem Straßennamen und der Stadt laut und deutlich Meine Adresse ist:"
 
-<b>Nutzer:</b> "stop"
+<b>Nutzer:</b> "Meine Adresse ist Lothstraße 64, 80335 München"
 
-<b>Alexa:</b> "Ich hoffe ich konnte dir helfen. Bis zum naechsten mal!"
+<b>Alexa:</b> "Am nächstgelegene Krankenhaus ist das Deutsches Herzzentrum München in der Lazarettstraße 36. In Neuhausen, 80636 München
+
+<b>Nutzer:</b> "Danke!"
+
+<b>Alexa:</b> "Und du weißt, Oma ist immer für dich da. Es kann passieren, dass sich der Stich infiziert dann solltest du nochmal zum Onkel Doktor schauen. Aber das passiert meistens nicht - du weißt doch, Oma ist immer übervorsichtig."
 
 ### Verletzung die man mit Hausmitteln behandeln kann
 
@@ -42,19 +60,34 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 <b>Alexa:</b> "Willkommen bei Ask Grandma! Hallo! Wie kann ich dir helfen?"
 
-<b>Nutzer:</b> "Ich habe einen Stich"
+<b>Nutzer:</b> "Ich habe einen Bienenstich"
 
-<b>Alexa:</b> "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert oder wurdest du an einer gefährlichen Stelle gestochen? Ist der Stich angeschwollen oder hast du Atemnot? Wenn nicht, kannst du mich nach Heilmitteln fragen."
+<b>Alexa:</b> "Oh nein! Falls der Stachel noch in der Haut steckt, zieh ihn sofort raus! Hast du schonmal allergisch auf Stiche reagiert?
 
-<b>Nutzer:</b> "Hausmittel"
+<b>Nutzer:</b> "Nein"
 
-<b>Alexa:</b> "Als Hausmittel fuer einen Bienenstich kannst du eine Zitrone, Zwiebel, Backpulver oder Venestil benutzen. Sage mir einfach welches du davon zur Hand hast und ich kann dir sagen wie du es anwendest."
+<b>Alexa:</b> "Wo wurdest du gestochen"
 
-<b>Nutzer:</b> "nein"
+<b>Nutzer:</b> "Am Arm"
 
-<b>Alexa:</b> "Das macht nichts. Lass etwas kaltes Wasser darueber laufen, dass hilft auch schon."
+<b>Alexa:</b> "OK das hört sich nicht so schlimm an! Ist es denn stark geschwollen oder hast du Atemnot?"
 
-<b>Nutzer:</b> "stop"
+<b>Nutzer:</b> "Nein"
 
-<b>Alexa:</b> "Ich hoffe ich konnte dir helfen. Bis zum naechsten Mal!"
+<b>Alexa:</b> "Perfekt! Dann ist es nicht schlimm. Bleib ruhig und befolge Omas Rat. Hast du Venestil zu Hause?"
 
+<b>Nutzer:</b> "Nein"
+
+<b>Alexa:</b> "Nicht schlimm, lass mich mal in der Küche schauen, was passen könnte. Ah! Ich habe was gefunden! Hast du vielleicht eine Zitrone oder eine Zwiebel zu Hause?"
+
+<b>Nutzer:</b> "Zwiebel"
+
+<b>Alexa:</b> "Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht. Hast du das Verstanden?"
+
+<b>Nutzer:</b> "Nein"
+
+<b>Alexa:</b> "Sehr gut! Halbiere die Zitrone oder Zwiebel und lege die Schnittstelle auf den Stich. Das Gift wird dadurch dem Stich entzogen. Kühle die Stelle trotzdem weiterhin und kratze die Stelle nicht. Hast du das Verstanden?"
+
+<b>Nutzer:</b> "Ja"
+
+<b>Alexa:</b> "Und du weißt, Oma ist immer für dich da. Es kann passieren, dass sich der Stich infiziert. Dann solltest du nochmal zum Onkel Doktor schauen. Aber das passiert meistens nicht. Du weißt doch, Oma ist immer übervorsichtig."
