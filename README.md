@@ -28,6 +28,42 @@ Sonarqube Quality Gate:
 
 ## Github Pages mit weiterführenden Informationen:
 
+### Anwendungsfalldiagramm 
+
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfalldiagramm_askgrandma.png)  
+
+### Anwendungsfallbeschreibung 
+
+#### Sonnenbrand 
+
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfall_sonnenbrand.png)  
+
+#### Stich
+
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfall_stich.png)   
+
+#### Totes Ende
+
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfall_totes_ende.png)  
+
+### User Stories 
+
+ Hier sind die verschiedenen User Stories, die anhand der Storyline ermittelt wurden.
+
+![User Stories](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/UserStories.JPG)
+
+### Fachklassenmodell
+
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/Fachklassendiagramm.png)
+
+### Sequenzdiagramme 
+
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/myinjuryisintenthandler_sequenzdiagramm.png)   
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/nearesthospitalintenthandler_sequenzdiagramm.png)  
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/nointenthandler_sequenzdiagramm.png)  
+![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/yesintenthandler_sequenzdiagramm.png)
+
+
 https://github.com/sweIhm-ws2018-19/skillproject-fr-23/wiki
 
 ## Kommunikationsbeispiele:
