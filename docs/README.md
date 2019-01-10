@@ -50,6 +50,7 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 <div><img src ="Images/nearesthospitalintenthandler_sequenzdiagramm.png"/></div>
 <div><img src ="Images/nointenthandler_sequenzdiagramm.png"/></div> 
 <div><img src ="Images/yesintenthandler_sequenzdiagramm.png"/></div> 
+<div><img src ="Images/Verabschiedung.jpeg"/></div> 
 
 ## Kommunikationsbeispiele:
 
