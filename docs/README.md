@@ -37,6 +37,9 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 ## User Stories 
 
  Hier sind die verschiedenen User Stories, die anhand der Storyline ermittelt wurden.
+ UserStories.JPG
+<div style="text-align:center"><img src ="Images/UserStories.JPG" /></div>
+
 
 ![User Stories](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/UserStories.JPG)
 
