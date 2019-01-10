@@ -18,30 +18,26 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 ## Anwendungsfalldiagramm 
 
-<img src="images/anwendungsfalldiagramm_askgrandma.png" alt="Anwendungsfalldiagramm" class="inline"/>
+<img src="Images/anwendungsfalldiagramm_askgrandma.png" alt="Anwendungsfalldiagramm" class="inline"/>
 
 ## Anwendungsfallbeschreibung 
 
 ### Sonnenbrand 
 
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfall_sonnenbrand.png)  
+<div><img src ="Images/anwendungsfall_sonnenbrand.png"/></div> 
 
 ### Stich
 
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfall_stich.png)   
+<div><img src ="Images/anwendungsfall_stich.png"/></div>
 
 ### Totes Ende
 
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/anwendungsfall_totes_ende.png)  
+<div><img src ="Images/anwendungsfall_totes_ende.png"/></div>
 
 ## User Stories 
 
  Hier sind die verschiedenen User Stories, die anhand der Storyline ermittelt wurden.
- UserStories.JPG
 <div style="text-align:center"><img src ="Images/UserStories.JPG" /></div>
-
-
-![User Stories](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/BeeSafeProjektplanung/UserStories.JPG)
 
 ## Fachklassenmodell
 
@@ -49,10 +45,10 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 ## Sequenzdiagramme 
 
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/myinjuryisintenthandler_sequenzdiagramm.png)   
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/nearesthospitalintenthandler_sequenzdiagramm.png)  
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/nointenthandler_sequenzdiagramm.png)  
-![](https://github.com/sweIhm-ws2018-19/skillproject-fr-23/blob/master/UML/Sequenzdiagramme/Sprint2/yesintenthandler_sequenzdiagramm.png)
+<div><img src ="Images/myinjuryisintenthandler_sequenzdiagramm.png"/></div>
+<div><img src ="Images/nearesthospitalintenthandler_sequenzdiagramm.png"/></div>
+<div><img src ="Images/nointenthandler_sequenzdiagramm.png"/></div> 
+<div><img src ="Images/yesintenthandler_sequenzdiagramm.png"/></div> 
 
 ## Kommunikationsbeispiele:
 
