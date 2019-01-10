@@ -18,7 +18,7 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 ## Anwendungsfalldiagramm 
 
-<img src="images/verkocht_AnalyseKlassenmodell.png" alt="AnalyseKlassendiagramm" class="inline"/>
+<img src="images/anwendungsfalldiagramm_askgrandma.png" alt="Anwendungsfalldiagramm" class="inline"/>
 
 ## Anwendungsfallbeschreibung 
 
