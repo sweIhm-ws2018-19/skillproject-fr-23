@@ -45,6 +45,7 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 ## Sequenzdiagramme 
 
+<div><img src ="Images/Begrüßung und Ermittlung der Verletzung.jpeg"/></div>
 <div><img src ="Images/myinjuryisintenthandler_sequenzdiagramm.png"/></div>
 <div><img src ="Images/nearesthospitalintenthandler_sequenzdiagramm.png"/></div>
 <div><img src ="Images/nointenthandler_sequenzdiagramm.png"/></div> 
