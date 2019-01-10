@@ -42,7 +42,7 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 ## Fachklassenmodell
 
-<img src ="Images/Fachklassendiagramm.png"/>
+<div><img src ="Images/Fachklassendiagramm.png"/></div>
 
 ## Sequenzdiagramme 
 
