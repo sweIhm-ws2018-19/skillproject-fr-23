@@ -28,7 +28,7 @@ Sonarqube Quality Gate:
 
 ## Github Pages mit weiterführenden Informationen:
 
-"Link"
+ https://sweihm-ws2018-19.github.io/skillproject-fr-23/
 
 ## Kommunikationsbeispiele:
 
