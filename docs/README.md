@@ -3,6 +3,12 @@ Die Idee des Alexa Skills „Ask Grandma – bee safe“ ist es, erste Hilfe bei
 
 <div style="text-align:center"><img src ="Images/BeeSafe_Logo.jpg" width="250"/></div>
 
+##Batches:
+
+
+![Build Status](https://travis-ci.org/sweIhm-ws2018-19/skillproject-fr-23.svg?branch=master)   
+![Build Status](https://sonarcloud.io/api/project_badges/measure?project=sweIhm_ws2018_19%3ABeeSafe&metric=alert_status)
+
 ## Ressourcen:
 
 - Hausmitteldatenbank
